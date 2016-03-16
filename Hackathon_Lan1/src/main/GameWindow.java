@@ -81,10 +81,10 @@ public class GameWindow extends Frame implements Runnable {
         jellyFishVector = FishEnemyManager.getInstance().getJellyFishVector();
         coralVector = FishEnemyManager.getInstance().getCoralVector();
 
-        vectorFishEnemy.add(new FishEnemy(50,300,2));
-        vectorFishEnemy.add(new FishEnemy(20,200,2));
-//        vectorFishEnemy.add(new FishEnemy(150,100,2));
-//        vectorFishEnemy.add(new FishEnemy(350,400,2));
+        vectorFishEnemy.add(new FishEnemy(350,300,2));
+        vectorFishEnemy.add(new FishEnemy(400,200,2));
+        vectorFishEnemy.add(new FishEnemy(550,100,2));
+        vectorFishEnemy.add(new FishEnemy(350,400,2));
 
         fishEnemySmallVector.add(new FishEnemySmall(200,50,3));
         fishEnemySmallVector.add(new FishEnemySmall(120,80,2));
@@ -130,11 +130,10 @@ public class GameWindow extends Frame implements Runnable {
             jellyFish.draw(g);
         }
 
-        PlayerManager.getInstance().getPlayer().draw(g);
-
         for(Coral coral : coralVector){
             coral.draw(g);
         }
+        PlayerManager.getInstance().getPlayer().draw(g);
     }
     public void music ()
     {
