@@ -1,0 +1,51 @@
+package fish;
+
+import graphics.Animation;
+import singleton.GameManager;
+
+import java.awt.*;
+
+/**
+ * Created by noivu on 3/15/2016.
+ */
+public class JellyFish extends FishObject {
+
+    int h;
+    private Animation anim;
+
+    public JellyFish(int positionX, int positionY, int speed) {
+        super(positionX, positionY, speed);
+        initAnimation();
+    }
+
+    private void initAnimation(){
+        anim = new Animation(525,553,50);
+
+    }
+    public void draw(Graphics g) {
+        anim.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),
+                getPositionY() + GameManager.getInstance().getLocationY());
+    }
+    //ham move()
+
+    public void move() {
+        setPositionY(getPositionY()- speed);
+        if (this.positionY <= 0) {
+            speed = -speed;
+        }
+        if (this.positionY >= 600) {
+            speed = -speed;
+        }
+    }
+
+    public void update(){
+        this.move();
+    }
+    public int getWidth() {
+        return sprite.getWidth();
+    }
+
+    public int getHeight() {
+        return sprite.getHeight();
+    }
+}
