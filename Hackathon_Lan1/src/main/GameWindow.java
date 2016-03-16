@@ -37,7 +37,7 @@ public class GameWindow extends Frame implements Runnable {
         this.setVisible(true);
         this.setResizable(false);
         this.setLocation(250,80);
-        music();
+        music("sound");
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -130,20 +130,16 @@ public class GameWindow extends Frame implements Runnable {
         }
         PlayerManager.getInstance().getPlayer().draw(g);
     }
-    public void music ()
+    public void music (String s)
     {
         InputStream in = null;
         try {
-            in = new FileInputStream("Sounds/sound.wav");
+            String str = String.format("Sounds/%s.wav", s);
+            in = new FileInputStream(str);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         AudioStream as = null;
-        try {
-            as = new AudioStream(in);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         try {
             as = new AudioStream(in);
         } catch (IOException e) {
