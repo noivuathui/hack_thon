@@ -2,7 +2,7 @@ package singleton;
 
 import Scene.Coral;
 import fish.FishEnemy;
-import fish.FishEnemy1;
+import fish.FlashlightFish;
 import fish.FishEnemySmall;
 import fish.JellyFish;
 
@@ -15,7 +15,7 @@ public class FishEnemyManager {
     int m;
 
     private Vector<FishEnemy> vectorFishEnemy;
-    private Vector<FishEnemy1> vectorFishEnemy1;
+    private Vector<FlashlightFish> vectorFlashlightFish;
     private Vector<FishEnemySmall> fishEnemySmallVector;
     private  Vector<JellyFish> jellyFishVector;
     private  Vector<Coral> coralVector;
@@ -28,7 +28,7 @@ public class FishEnemyManager {
 
     private FishEnemyManager(){
         vectorFishEnemy = new Vector<FishEnemy>();
-        vectorFishEnemy1 = new Vector<FishEnemy1>();
+        vectorFlashlightFish = new Vector<FlashlightFish>();
         fishEnemySmallVector = new Vector<FishEnemySmall>();
         jellyFishVector = new Vector<JellyFish>();
         coralVector = new Vector<Coral>();
@@ -37,7 +37,7 @@ public class FishEnemyManager {
     public Vector<FishEnemy> getVectorFishEnemy(){
         return vectorFishEnemy;
     }
-    public Vector<FishEnemy1> getVectorFishEnemy1(){return  vectorFishEnemy1;}
+    public Vector<FlashlightFish> getVectorFlashlightFish(){return vectorFlashlightFish;}
     public Vector<FishEnemySmall> getFishEnemySmallVector(){
         return fishEnemySmallVector;
     }

@@ -8,26 +8,17 @@ import java.awt.*;
 /**
  * Created by TrungSon on 16/03/2016.
  */
-public class FishEnemy1 extends FishObject  {
-
-    private int direction;
-    private int start1;
-    private int end1;
-    private int delta1;
+public class FlashlightFish extends FishObject  {
     private Animation anim;
 
-    public FishEnemy1(int positionX, int positionY, int speed) {
+    public FlashlightFish(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
         initAnimation();
 
 
     }
     private void initAnimation(){
-
-        start1= 310;
-        end1=353;
-        delta1=100;
-        anim=new Animation(start1,end1,delta1);
+        anim = new Animation(Define.FLASH_LIGHT_FISH_START, Define.FLASH_LIGHT_FISH_END, 50);
     }
     public void draw(Graphics g) {
         anim.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),

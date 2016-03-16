@@ -22,12 +22,42 @@ public class Define {
     public static final int FISH_LEVEL3_EAT_START = 597;
     public static final int FISH_LEVEL3_EAT_END = 607;
 
-    public static final int FISH_ENEMY_1_START = 64;
-    public static final int FISH_ENEMY_1_END = 90;
-    public static final int FISH_ENEMY_1_FLIP_START = 93;
-    public static final int FISH_ENEMY_1_FLIP_END = 101;
-    public static final int FISH_ENEMY_1_EAT_START = 104;
-    public static final int FISH_ENEMY_1_EAT_END = 114;
+    // Jelly fish
+    public static final int JELLY_FISH_START = 525;
+    public static final int JELLY_FISH_END = 553;
 
+    // ca dich
+    public static final int FISH_ENEMY_START = 310;
+    public static final int FISH_ENEMY_END = 338;
+    public static final int FISH_ENEMY_FLIP_START = 341;
+    public static final int FISH_ENEMY_FLIP_END = 353;
+
+    // Ca dich nho
+    public static final int FISH_ENEMY_SMALL_START = 310;
+    public static final int FISH_ENEMY_SMALL_END = 338;
+    public static final int FISH_ENEMY_SMALL_FLIP_START = 341;
+    public static final int FISH_ENEMY_SMALL_FLIP_END = 353;
+
+    // Ca doc
+    public static final int FISH_CA_DOC_START = 611;
+    public static final int FISH_CA_DOC_END = 639;
+    public static final int FISH_CA_DOC_FLIP_START = 342;
+    public static final int FISH_CA_DOC_FLIP_END = 350;
+    public static final int FISH_CA_DOC_EAT_START = 457;
+    public static final int FISH_CA_DOC_EAT_END = 467;
+
+    // Ca phat sang
+    public static final int FLASH_LIGHT_FISH_START = 415;
+    public static final int FLASH_LIGHT_FISH_END = 443;
+    public static final int FLASH_LIGHT_FISH_FLIP_START = 446;
+    public static final int FLASH_LIGHT_FISH_FLIP_END = 454;
+    public static final int FLASH_LIGHT_FISH_EAT_START = 457;
+    public static final int FLASH_LIGHT_FISH_EAT_END = 467;
+
+    // Toa do gioi han
+    public static final int RIGHT_WALL =  500 ;
+    public static final int UP_WALL =  1 ;
+    public static final int DOWN_WALL =  500 ;
+    public static final int LEFT_WALL =  1 ;
 
 }

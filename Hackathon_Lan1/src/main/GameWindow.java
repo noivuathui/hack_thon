@@ -2,22 +2,18 @@ package main;
 
 import Scene.Coral;
 import fish.FishEnemy;
-import fish.FishEnemy1;
+import fish.FlashlightFish;
 import fish.FishEnemySmall;
 import fish.JellyFish;
 import singleton.FishEnemyManager;
 import singleton.PlayerManager;
-import sun.audio.AudioData;
 import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
-import sun.audio.ContinuousAudioDataStream;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Vector;
 
 /**
@@ -30,13 +26,12 @@ public class GameWindow extends Frame implements Runnable {
     BufferedImage background;
     Vector<FishEnemy> vectorFishEnemy;
     Vector<FishEnemySmall> fishEnemySmallVector;
-    Vector<FishEnemy1> fishEnemy1Vector;
+    Vector<FlashlightFish> flashlightFishVector;
     Vector<JellyFish> jellyFishVector;
     Vector<Coral> coralVector;
 
 
     public GameWindow() {
-
         this.setTitle("FEEDING FRENZY");
         this.setSize(800, 600);
         this.setVisible(true);
@@ -76,7 +71,7 @@ public class GameWindow extends Frame implements Runnable {
 
     private void initFish() {
         vectorFishEnemy =  FishEnemyManager.getInstance().getVectorFishEnemy();
-        fishEnemy1Vector = FishEnemyManager.getInstance().getVectorFishEnemy1();
+        flashlightFishVector = FishEnemyManager.getInstance().getVectorFlashlightFish();
         fishEnemySmallVector = FishEnemyManager.getInstance().getFishEnemySmallVector();
         jellyFishVector = FishEnemyManager.getInstance().getJellyFishVector();
         coralVector = FishEnemyManager.getInstance().getCoralVector();
@@ -89,8 +84,8 @@ public class GameWindow extends Frame implements Runnable {
         fishEnemySmallVector.add(new FishEnemySmall(200,50,3));
         fishEnemySmallVector.add(new FishEnemySmall(120,80,2));
 
-        fishEnemy1Vector.add(new FishEnemy1(50,50,4));
-        fishEnemy1Vector.add(new FishEnemy1(90,200,2));
+        flashlightFishVector.add(new FlashlightFish(50,50,4));
+        flashlightFishVector.add(new FlashlightFish(90,200,2));
 
         jellyFishVector.add(new JellyFish(30,600,2));
         jellyFishVector.add(new JellyFish(500,600,1));
@@ -123,8 +118,8 @@ public class GameWindow extends Frame implements Runnable {
         for(FishEnemySmall fishEnemySmall : fishEnemySmallVector){
             fishEnemySmall.draw(g);
         }
-        for(FishEnemy1 fishEnemy1 : fishEnemy1Vector){
-            fishEnemy1.draw(g);
+        for(FlashlightFish flashlightFish : flashlightFishVector){
+            flashlightFish.draw(g);
         }
         for(JellyFish jellyFish : jellyFishVector){
             jellyFish.draw(g);
@@ -137,24 +132,29 @@ public class GameWindow extends Frame implements Runnable {
     }
     public void music ()
     {
-        AudioPlayer MGP = AudioPlayer.player;
-        AudioStream BGM;
-        AudioData MD ;
-        ContinuousAudioDataStream loop = null;
+        InputStream in = null;
         try {
-            BGM = new AudioStream (new FileInputStream("sound.wav"));
-            MD = BGM.getData();
-            loop = new ContinuousAudioDataStream(MD);
-            AudioPlayer.player.start(BGM);
-        } catch (IOException error) {
-            MGP.start(loop);
-            System.out.println("Error");
+            in = new FileInputStream("Sounds/sound.wav");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+        AudioStream as = null;
+        try {
+            as = new AudioStream(in);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            as = new AudioStream(in);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        AudioPlayer.player.start(as);
+        //
 
     }
     @Override
     public void run() {
-
         while(true) {
             PlayerManager.getInstance().getPlayer().update();
             for(FishEnemy fishEnemy : vectorFishEnemy){
@@ -163,8 +163,8 @@ public class GameWindow extends Frame implements Runnable {
             for(FishEnemySmall fishEnemySmall : fishEnemySmallVector){
                 fishEnemySmall.update();
             }
-            for(FishEnemy1 fishEnemy1 : fishEnemy1Vector){
-                fishEnemy1.update();
+            for(FlashlightFish flashlightFish : flashlightFishVector){
+                flashlightFish.update();
             }
             for(JellyFish jellyFish : jellyFishVector){
                 jellyFish.update();

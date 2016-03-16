@@ -11,7 +11,6 @@ import java.io.IOException;
  * Created by noivu on 3/15/2016.
  */
 public class Coral extends GameObject {
-    int c;
     private int kieu;
 
     public Coral(int positionX, int positionY, int kieu){
@@ -57,6 +56,7 @@ public class Coral extends GameObject {
     public void move(){
 
     }
+
     @Override
     public void update() {
         this.move();

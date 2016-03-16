@@ -19,14 +19,12 @@ public class JellyFish extends FishObject {
     }
 
     private void initAnimation(){
-        anim = new Animation(525,553,50);
-
+        anim = new Animation(Define.JELLY_FISH_START,Define.JELLY_FISH_END,50);
     }
     public void draw(Graphics g) {
         anim.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),
                 getPositionY() + GameManager.getInstance().getLocationY());
     }
-    //ham move()
 
     public void move() {
         setPositionY(getPositionY()- speed);
@@ -41,11 +39,12 @@ public class JellyFish extends FishObject {
     public void update(){
         this.move();
     }
+
     public int getWidth() {
-        return sprite.getWidth();
+        return anim.getWidth();
     }
 
     public int getHeight() {
-        return sprite.getHeight();
+        return anim.getHeight();
     }
 }

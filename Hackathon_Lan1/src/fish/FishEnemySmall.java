@@ -9,30 +9,40 @@ import java.awt.*;
  * Created by noivu on 3/15/2016.
  */
 public class FishEnemySmall extends FishObject {
-    int f;
-
     private Animation anim;
+    private Animation anim_flip;
+    private boolean check = true;
+
     public FishEnemySmall(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
         initAnimation();
     }
 
     private void initAnimation(){
-        anim = new Animation(310,340,50);
-
+        anim = new Animation(Define.FISH_ENEMY_SMALL_START,Define.FISH_ENEMY_SMALL_END,50);
+        anim_flip = new Animation(Define.FISH_ENEMY_SMALL_FLIP_START,Define.FISH_ENEMY_SMALL_FLIP_END,50);
     }
+
+    private int count = 0;
     public void draw(Graphics g) {
-        anim.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),
-                getPositionY() + GameManager.getInstance().getLocationY());
+        if(check) {
+            anim.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),
+                    getPositionY() + GameManager.getInstance().getLocationY());
+        }
+        else {
+            anim_flip.draw(g, positionX + GameManager.getInstance().getLocationX()
+                    , positionY + GameManager.getInstance().getLocationY());
+            count++;
+            if(count > 20) {
+                count = 0;
+                check = true;
+            }
+        }
     }
-    //ham move()
-    private  int xVelocity =  1 ;
-    private  int yVelocity =  1 ;
-    private  static  final  int RIGHT_WALL =  500 ;
-    private  static  final  int UP_WALL =  1 ;
-    private  static  final  int DOWN_WALL =  500 ;
-    private  static  final  int LEFT_WALL =  1 ;
 
+    //ham move()
+    private int xVelocity =  1 ;
+    private int yVelocity =  1 ;
     public  void setRandomDirection ()  {
         double direction =  Math . random ()* 3.0 * Math . PI ;
 
@@ -40,40 +50,43 @@ public class FishEnemySmall extends FishObject {
         yVelocity =  ( int )  ( speed * Math . sin ( direction ));
         if(xVelocity > 0){
             anim.setFlipX(-1);
+            check = false;
         } else {
             anim.setFlipX(1);
         }
     }
+
     public void move() {
        //added
             positionX += xVelocity;
             positionY += yVelocity;
-            if (positionX >= RIGHT_WALL) {
-                positionX = RIGHT_WALL;
-                setRandomDirection();
-            }
-            if (positionX <= LEFT_WALL) {
-                positionX = LEFT_WALL;
-                setRandomDirection();
-            }
-            if (positionY >= DOWN_WALL) {
-                positionY = DOWN_WALL;
-                setRandomDirection();
-            }
-            if (positionY <= UP_WALL) {
-                positionY = UP_WALL;
-                setRandomDirection();
-            }
+        if  ( positionX >= Define.RIGHT_WALL )  {
+            positionX = Define.RIGHT_WALL ;
+            setRandomDirection ();
+        }
+        if  ( positionX <= Define.LEFT_WALL )  {
+            positionX = Define.LEFT_WALL ;
+            setRandomDirection ();
+        }
+        if  ( positionY >= Define.DOWN_WALL )  {
+            positionY = Define.DOWN_WALL ;
+            setRandomDirection ();
+        }
+        if  ( positionY <= Define.UP_WALL )  {
+            positionY = Define.UP_WALL ;
+            setRandomDirection ();
+        }
         }
 
     public void update(){
         this.move();
     }
+
     public int getWidth() {
-        return sprite.getWidth();
+        return anim.getWidth();
     }
 
     public int getHeight() {
-        return sprite.getHeight();
+        return anim.getHeight();
     }
 }
