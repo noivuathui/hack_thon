@@ -7,8 +7,7 @@ import fish.FishEnemySmall;
 import fish.JellyFish;
 import singleton.FishEnemyManager;
 import singleton.PlayerManager;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
+import sound.BgMusic;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.*;
@@ -37,7 +36,7 @@ public class GameWindow extends Frame implements Runnable {
         this.setVisible(true);
         this.setResizable(false);
         this.setLocation(250,80);
-        music("sound");
+        BgMusic.music("sound");
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -130,25 +129,7 @@ public class GameWindow extends Frame implements Runnable {
         }
         PlayerManager.getInstance().getPlayer().draw(g);
     }
-    public void music (String s)
-    {
-        InputStream in = null;
-        try {
-            String str = String.format("Sounds/%s.wav", s);
-            in = new FileInputStream(str);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        AudioStream as = null;
-        try {
-            as = new AudioStream(in);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        AudioPlayer.player.start(as);
-        //
 
-    }
     @Override
     public void run() {
         while(true) {

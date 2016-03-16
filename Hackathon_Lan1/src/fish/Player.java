@@ -1,8 +1,11 @@
 package fish;
 
 import graphics.Animation;
+import main.GameWindow;
 import singleton.FishEnemyManager;
 import singleton.GameManager;
+import sound.BgMusic;
+
 import java.awt.*;
 /**
  * Created by VinhNguyenDinh on 03/13/2016.
@@ -65,11 +68,17 @@ public class Player extends FishObject {
         this.positionY = positionY;
     }
 
+    int kt = 1;
     public void update() {
         super.update();
         this.move(this.positionX, this.positionY);
         if(checkCollisionEnemy()) {
             check = false;
+            if(kt == 1) {
+                BgMusic.music("sound2");
+                kt = 0;
+            }
+
         }
     }
 
