@@ -9,8 +9,6 @@ import java.awt.*;
  * Created by TrungSon on 16/03/2016.
  */
 public class FlashlightFish extends FishObject  {
-    private Animation anim;
-
     public FlashlightFish(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
         initAnimation();
@@ -18,10 +16,10 @@ public class FlashlightFish extends FishObject  {
 
     }
     private void initAnimation(){
-        anim = new Animation(Define.FLASH_LIGHT_FISH_START, Define.FLASH_LIGHT_FISH_END, 50);
+        animationNormal = new Animation(Define.FLASH_LIGHT_FISH_START, Define.FLASH_LIGHT_FISH_END, 50);
     }
     public void draw(Graphics g) {
-        anim.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),
+        animationNormal.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),
                 getPositionY() + GameManager.getInstance().getLocationY());
 
 
@@ -39,9 +37,9 @@ public class FlashlightFish extends FishObject  {
         xVelocity =  ( int )  ( speed * Math . sin ( direction ));
         yVelocity =  ( int )  ( speed * Math . cos ( direction ));
         if(xVelocity > 0){
-            anim.setFlipX(-1);
+            animationNormal.setFlipX(-1);
         } else {
-            anim.setFlipX(1);
+            animationNormal.setFlipX(1);
         }
     }
     public void move() {
@@ -68,19 +66,30 @@ public class FlashlightFish extends FishObject  {
     }
 
     public void update(){
-
-
-
-
-
         this.move();
     }
+
     public int getWidth() {
-        return anim.getWidth();
+        return animationNormal.getWidth();
     }
 
     public int getHeight() {
-        return anim.getHeight();
+        return animationNormal.getHeight();
+    }
+
+    @Override
+    public Animation getAnimationNormal() {
+        return animationNormal;
+    }
+
+    @Override
+    public Animation getAnimationFlip() {
+        return null;
+    }
+
+    @Override
+    public Animation getAnimationEat() {
+        return null;
     }
 
 }

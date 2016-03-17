@@ -2,6 +2,9 @@ package fish;
 
 import graphics.Animation;
 import main.GameObject;
+import singleton.FishEnemyManager;
+import singleton.PlayerManager;
+
 import java.awt.*;
 
 /**
@@ -9,6 +12,9 @@ import java.awt.*;
  */
 public abstract class FishObject extends GameObject {
     protected int speed;
+    protected Animation animationNormal;
+    protected Animation animationFlip;
+    protected Animation animationEat;
 
     FishObject(int positionX, int positionY, int speed) {
         this.positionX = positionX;
@@ -31,4 +37,9 @@ public abstract class FishObject extends GameObject {
 
     public abstract int getHeight();
 
+    public abstract Animation getAnimationNormal();
+
+    public abstract Animation getAnimationFlip();
+
+    public abstract Animation getAnimationEat();
 }
