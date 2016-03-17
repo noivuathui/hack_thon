@@ -62,6 +62,16 @@ public class Player extends FishObject {
         }
     }
 
+    @Override
+    public int getWidth() {
+        return anim.getWidth();
+    }
+
+    @Override
+    public int getHeight() {
+        return anim.getHeight();
+    }
+
 
     public void move(int positionX, int positionY) {
         this.positionX = positionX;
@@ -72,22 +82,18 @@ public class Player extends FishObject {
     public void update() {
         super.update();
         this.move(this.positionX, this.positionY);
-        if(checkCollisionEnemy()) {
+        if(checkCollisionEnemy() == true) {
             check = false;
-            if(kt == 1) {
-                BgMusic.music("sound2");
-                kt = 0;
-            }
-
+            BgMusic.music("sound2");
         }
     }
 
     private boolean checkCollisionEnemy() {
-        Rectangle rectPlayer = new Rectangle(positionX, positionY, anim.getWidth(), anim.getHeight());
-        for (FishEnemy fishEnemy : FishEnemyManager.getInstance().getVectorFishEnemy()) {
-            Rectangle rectFishEnemy = new Rectangle(fishEnemy.getPositionX(), fishEnemy.getPositionY(), fishEnemy.getWidth(), fishEnemy.getHeight());
-            if (rectPlayer.intersects(rectFishEnemy)) {
-                FishEnemyManager.getInstance().getVectorFishEnemy().remove(FishEnemyManager.getInstance().getVectorFishEnemy().indexOf(fishEnemy));
+        Rectangle rectPlayer = new Rectangle(this.positionX, this.positionY, this.anim.getWidth(), this.anim.getHeight());
+        for (FishObject fishObject : FishEnemyManager.getInstance().getVectorFishObject()) {
+            Rectangle rectFishObject = new Rectangle(fishObject.getPositionX(), fishObject.getPositionY(), fishObject.getWidth(), fishObject.getHeight());
+            if (rectPlayer.intersects(rectFishObject)) {
+                FishEnemyManager.getInstance().getVectorFishObject().remove(FishEnemyManager.getInstance().getVectorFishObject().indexOf(fishObject));
                 return true;
             }
         }
@@ -110,7 +116,4 @@ public class Player extends FishObject {
         this.direction = direction;
     }
 
-    public boolean getCheck() {
-        return check;
-    }
 }

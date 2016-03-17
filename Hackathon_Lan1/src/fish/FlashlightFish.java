@@ -76,11 +76,11 @@ public class FlashlightFish extends FishObject  {
         this.move();
     }
     public int getWidth() {
-        return sprite.getWidth();
+        return anim.getWidth();
     }
 
     public int getHeight() {
-        return sprite.getHeight();
+        return anim.getHeight();
     }
 
 }

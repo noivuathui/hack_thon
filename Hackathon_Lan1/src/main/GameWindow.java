@@ -1,10 +1,8 @@
 package main;
 
 import Scene.Coral;
-import fish.FishEnemy;
-import fish.FlashlightFish;
-import fish.FishEnemySmall;
-import fish.JellyFish;
+import fish.*;
+import graphics.Topic;
 import singleton.FishEnemyManager;
 import singleton.PlayerManager;
 import sound.BgMusic;
@@ -19,24 +17,20 @@ import java.util.Vector;
  * Created by VinhNguyenDinh on 03/13/2016.
  */
 public class GameWindow extends Frame implements Runnable {
-    int a;
     Graphics seconds;
     Image image;
     BufferedImage background;
-    Vector<FishEnemy> vectorFishEnemy;
-    Vector<FishEnemySmall> fishEnemySmallVector;
-    Vector<FlashlightFish> flashlightFishVector;
-    Vector<JellyFish> jellyFishVector;
+    Vector<FishObject>  vectorFishObject;
     Vector<Coral> coralVector;
 
 
     public GameWindow() {
-        this.setTitle("FEEDING FRENZY");
+        this.setTitle(Topic.TITLE);
         this.setSize(800, 600);
         this.setVisible(true);
         this.setResizable(false);
         this.setLocation(250,80);
-        BgMusic.music("sound");
+
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -45,11 +39,13 @@ public class GameWindow extends Frame implements Runnable {
             }
         });
         try {
-            background = ImageIO.read(new File("Resources/image 672.jpg"));
+            background = ImageIO.read(new File(Topic.BACKGROUND));
         } catch (IOException e) {
             e.printStackTrace();
         }
+        // Khoi tao
         initFish();
+
         this.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
@@ -69,25 +65,19 @@ public class GameWindow extends Frame implements Runnable {
     }
 
     private void initFish() {
-        vectorFishEnemy =  FishEnemyManager.getInstance().getVectorFishEnemy();
-        flashlightFishVector = FishEnemyManager.getInstance().getVectorFlashlightFish();
-        fishEnemySmallVector = FishEnemyManager.getInstance().getFishEnemySmallVector();
-        jellyFishVector = FishEnemyManager.getInstance().getJellyFishVector();
-        coralVector = FishEnemyManager.getInstance().getCoralVector();
+        vectorFishObject =  FishEnemyManager.getInstance().getVectorFishObject();
+        coralVector = FishEnemyManager.getInstance().getVectorCoral();
 
-        vectorFishEnemy.add(new FishEnemy(350,300,2));
-        vectorFishEnemy.add(new FishEnemy(400,200,2));
-        vectorFishEnemy.add(new FishEnemy(550,100,2));
-        vectorFishEnemy.add(new FishEnemy(350,400,2));
-
-        fishEnemySmallVector.add(new FishEnemySmall(200,50,3));
-        fishEnemySmallVector.add(new FishEnemySmall(120,80,2));
-
-        flashlightFishVector.add(new FlashlightFish(50,50,4));
-        flashlightFishVector.add(new FlashlightFish(90,200,2));
-
-        jellyFishVector.add(new JellyFish(30,600,2));
-        jellyFishVector.add(new JellyFish(500,600,1));
+        vectorFishObject.add(new FishEnemy(350,300,2));
+        vectorFishObject.add(new FishEnemy(400,200,2));
+        vectorFishObject.add(new FishEnemy(550,100,2));
+        vectorFishObject.add(new FishEnemy(350,400,2));
+        vectorFishObject.add(new FishEnemySmall(200,50,3));
+        vectorFishObject.add(new FishEnemySmall(120,80,2));
+        vectorFishObject.add(new FlashlightFish(50,50,4));
+        vectorFishObject.add(new FlashlightFish(90,200,2));
+        vectorFishObject.add(new JellyFish(30,600,2));
+        vectorFishObject.add(new JellyFish(500,600,1));
 
         coralVector.add(new Coral(80,480,1));
         coralVector.add(new Coral(630,480,2));
@@ -111,43 +101,37 @@ public class GameWindow extends Frame implements Runnable {
     @Override
     public void paint(Graphics g) {
         g.drawImage(background,0,0,null);
-        for(FishEnemy fishEnemy : vectorFishEnemy){
-            fishEnemy.draw(g);
+        for(FishObject fishObject : vectorFishObject) {
+            fishObject.draw(g);
         }
-        for(FishEnemySmall fishEnemySmall : fishEnemySmallVector){
-            fishEnemySmall.draw(g);
-        }
-        for(FlashlightFish flashlightFish : flashlightFishVector){
-            flashlightFish.draw(g);
-        }
-        for(JellyFish jellyFish : jellyFishVector){
-            jellyFish.draw(g);
-        }
-
         for(Coral coral : coralVector){
             coral.draw(g);
         }
         PlayerManager.getInstance().getPlayer().draw(g);
     }
 
+    private boolean check = true;
+    private int count = 0;
     @Override
     public void run() {
         while(true) {
             PlayerManager.getInstance().getPlayer().update();
-            for(FishEnemy fishEnemy : vectorFishEnemy){
-                fishEnemy.update();
-            }
-            for(FishEnemySmall fishEnemySmall : fishEnemySmallVector){
-                fishEnemySmall.update();
-            }
-            for(FlashlightFish flashlightFish : flashlightFishVector){
-                flashlightFish.update();
-            }
-            for(JellyFish jellyFish : jellyFishVector){
-                jellyFish.update();
+            for(FishObject fishObject : vectorFishObject) {
+                fishObject.update();
             }
             for(Coral coral : coralVector){
                 coral.update();
+            }
+            if(count >= 0) {
+                count++;
+                if(check) {
+                    BgMusic.music("sound");
+                    check = false;
+                }
+                if(count > 200) {
+                    count = 0;
+                    check = true;
+                }
             }
             repaint();
             try {

@@ -1,5 +1,6 @@
 package fish;
 
+import graphics.Animation;
 import main.GameObject;
 import java.awt.*;
 
@@ -25,4 +26,9 @@ public abstract class FishObject extends GameObject {
     public void draw(Graphics g) {
         g.drawImage(sprite,positionX,positionY,null);
     }
+
+    public abstract int getWidth();
+
+    public abstract int getHeight();
+
 }

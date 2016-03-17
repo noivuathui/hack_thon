@@ -1,24 +1,15 @@
 package singleton;
 
 import Scene.Coral;
-import fish.FishEnemy;
-import fish.FlashlightFish;
-import fish.FishEnemySmall;
-import fish.JellyFish;
-
+import fish.*;
 import java.util.Vector;
 
 /**
  * Created by Anh on 3/14/2016.
  */
 public class FishEnemyManager {
-    int m;
-
-    private Vector<FishEnemy> vectorFishEnemy;
-    private Vector<FlashlightFish> vectorFlashlightFish;
-    private Vector<FishEnemySmall> fishEnemySmallVector;
-    private  Vector<JellyFish> jellyFishVector;
-    private  Vector<Coral> coralVector;
+    private Vector<FishObject> vectorFishObject;
+    private Vector<Coral> vectorCoral;
 
     private static FishEnemyManager ourInstance = new FishEnemyManager();
 
@@ -27,21 +18,15 @@ public class FishEnemyManager {
     }
 
     private FishEnemyManager(){
-        vectorFishEnemy = new Vector<FishEnemy>();
-        vectorFlashlightFish = new Vector<FlashlightFish>();
-        fishEnemySmallVector = new Vector<FishEnemySmall>();
-        jellyFishVector = new Vector<JellyFish>();
-        coralVector = new Vector<Coral>();
+        vectorFishObject = new Vector<>();
+        vectorCoral = new Vector<>();
     }
 
-    public Vector<FishEnemy> getVectorFishEnemy(){
-        return vectorFishEnemy;
+    public Vector<FishObject> getVectorFishObject() {
+        return vectorFishObject;
     }
-    public Vector<FlashlightFish> getVectorFlashlightFish(){return vectorFlashlightFish;}
-    public Vector<FishEnemySmall> getFishEnemySmallVector(){
-        return fishEnemySmallVector;
-    }
-    public Vector<JellyFish> getJellyFishVector(){ return jellyFishVector; }
-    public Vector<Coral> getCoralVector(){ return  coralVector; }
 
+    public Vector<Coral> getVectorCoral() {
+        return vectorCoral;
+    }
 }

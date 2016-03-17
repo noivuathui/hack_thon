@@ -8,7 +8,7 @@ import java.awt.*;
 /**
  * Created by Anh on 3/14/2016.
  */
-public class FishEnemy extends FishObject{
+public class FishEnemy extends FishObject {
     private int direction; // 1.Left - 2.Right
     private int start;
     private int end;
@@ -44,6 +44,16 @@ public class FishEnemy extends FishObject{
                 check = true;
             }
         }
+    }
+
+    @Override
+    public int getWidth() {
+        return anim.getWidth();
+    }
+
+    @Override
+    public int getHeight() {
+        return anim.getHeight();
     }
 
     //ham move()
@@ -83,13 +93,5 @@ public class FishEnemy extends FishObject{
 
     public void update(){
         this.move();
-    }
-
-    public int getWidth() {
-        return anim.getWidth();
-    }
-
-    public int getHeight() {
-        return anim.getHeight();
     }
 }

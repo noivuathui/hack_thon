@@ -1,6 +1,7 @@
 package fish;
 
 import graphics.Animation;
+import main.GameObject;
 import singleton.GameManager;
 
 import java.awt.*;
@@ -9,8 +10,6 @@ import java.awt.*;
  * Created by noivu on 3/15/2016.
  */
 public class JellyFish extends FishObject {
-
-    int h;
     private Animation anim;
 
     public JellyFish(int positionX, int positionY, int speed) {

@@ -19,8 +19,8 @@ public class Animation extends GameObject {
     private int index;
     private int width;
     private int height;
-    private int flipX;//1 thi quay mac dinh, -1 thi quay sang ben kia
-    private int flipY;//1 mac dinh,-1 thi quay
+    private int flipX; //1 thi quay mac dinh, -1 thi quay sang ben kia
+    private int flipY; //1 mac dinh, -1 thi quay
 
     public int getFlipX() {
         return flipX;
