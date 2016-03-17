@@ -5,7 +5,7 @@ import fish.*;
 import graphics.Topic;
 import singleton.FishEnemyManager;
 import singleton.PlayerManager;
-import sound.BgMusic;
+import sound.Music;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.*;
@@ -21,6 +21,7 @@ public class GameWindow extends Frame implements Runnable {
     Image image;
     BufferedImage background;
     Vector<FishObject>  vectorFishObject;
+    Vector<JellyFish> vectorJellyFish;
     Vector<Coral> coralVector;
 
 
@@ -66,6 +67,7 @@ public class GameWindow extends Frame implements Runnable {
 
     private void initFish() {
         vectorFishObject =  FishEnemyManager.getInstance().getVectorFishObject();
+        vectorJellyFish = FishEnemyManager.getInstance().getVectorJellyFish();
         coralVector = FishEnemyManager.getInstance().getVectorCoral();
 
         vectorFishObject.add(new FishEnemy(350,300,2));
@@ -76,8 +78,8 @@ public class GameWindow extends Frame implements Runnable {
         vectorFishObject.add(new FishEnemySmall(120,80,2));
         vectorFishObject.add(new FlashlightFish(50,50,4));
         vectorFishObject.add(new FlashlightFish(90,200,2));
-        vectorFishObject.add(new JellyFish(30,600,2));
-        vectorFishObject.add(new JellyFish(500,600,1));
+        vectorJellyFish.add(new JellyFish(30,600,2));
+        vectorJellyFish.add(new JellyFish(500,600,1));
 
         coralVector.add(new Coral(80,480,1));
         coralVector.add(new Coral(630,480,2));
@@ -104,6 +106,9 @@ public class GameWindow extends Frame implements Runnable {
         for(FishObject fishObject : vectorFishObject) {
             fishObject.draw(g);
         }
+        for(JellyFish jellyFish : vectorJellyFish) {
+            jellyFish.draw(g);
+        }
         for(Coral coral : coralVector){
             coral.draw(g);
         }
@@ -119,13 +124,16 @@ public class GameWindow extends Frame implements Runnable {
             for(FishObject fishObject : vectorFishObject) {
                 fishObject.update();
             }
+            for(JellyFish jellyFish : vectorJellyFish) {
+                jellyFish.update();
+            }
             for(Coral coral : coralVector){
                 coral.update();
             }
             if(count >= 0) {
                 count++;
                 if(check) {
-                    BgMusic.music("sound");
+                    Music.music("sound");
                     check = false;
                 }
                 if(count > 200) {

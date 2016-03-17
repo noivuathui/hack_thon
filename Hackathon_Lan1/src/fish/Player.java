@@ -1,10 +1,9 @@
 package fish;
 
 import graphics.Animation;
-import main.GameWindow;
 import singleton.FishEnemyManager;
 import singleton.GameManager;
-import sound.BgMusic;
+import sound.Music;
 
 import java.awt.*;
 /**
@@ -84,7 +83,7 @@ public class Player extends FishObject {
         this.move(this.positionX, this.positionY);
         if(checkCollisionEnemy() == true) {
             check = false;
-            BgMusic.music("sound2");
+            Music.music("sound2");
         }
     }
 

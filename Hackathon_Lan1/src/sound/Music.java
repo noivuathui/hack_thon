@@ -11,7 +11,7 @@ import java.io.InputStream;
 /**
  * Created by VinhNguyenDinh on 03/17/2016.
  */
-public class BgMusic {
+public class Music {
     public static final void music (String s)
     {
         InputStream in = null;
