@@ -60,9 +60,18 @@ public class Player extends FishObject {
         }
     }
 
+    private int oldX;
+    private int oldY;
+
     public void move(int positionX, int positionY) {
         this.positionX = positionX;
         this.positionY = positionY;
+        if(positionX > oldX + 5) {
+            animationNormal.setFlipX(-1);
+        }
+        else if(positionX < oldX - 5){
+            animationNormal.setFlipX(1);
+        }
     }
 
     int kt = 1;
@@ -73,6 +82,7 @@ public class Player extends FishObject {
             check = false;
             Music.music("sound2");
         }
+        oldX = positionX;   oldY = positionY;
     }
 
     private boolean checkCollisionEnemy() {
