@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc83fdd2-e15c-4be8-8ed7-f3cf3abfd603" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/FishEnemy.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/FishEnemy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/FishObject.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/FishObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/main/GameWindow$1.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/main/GameWindow$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/main/GameWindow$2.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/main/GameWindow$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/singleton/FishEnemyManager.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/singleton/FishEnemyManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Hackathon_Lan1.iws" />
@@ -784,7 +779,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458237681932</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update">
+      <created>1458237722378</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1458237722378</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
