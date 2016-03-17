@@ -40,7 +40,7 @@ public class Player extends FishObject {
     public Player(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
         this.direction = 1;
-        this.level = 2;
+        this.level = 1;
         initAnimation();
     }
 
@@ -71,10 +71,18 @@ public class Player extends FishObject {
         return anim.getHeight();
     }
 
+    public int oldX;
+    public int oldY;
 
     public void move(int positionX, int positionY) {
         this.positionX = positionX;
         this.positionY = positionY;
+        if(getPositionX() >= oldX +5){
+            anim.setFlipX(-1);
+        }
+        else if(getPositionX() <= oldX -5){
+            anim.setFlipX(1);
+        }
     }
 
     int kt = 1;
@@ -85,10 +93,12 @@ public class Player extends FishObject {
             check = false;
             Music.music("sound2");
         }
+        oldX = getPositionX();
+        oldY = getPositionY();
     }
 
     private boolean checkCollisionEnemy() {
-        Rectangle rectPlayer = new Rectangle(this.positionX, this.positionY, this.anim.getWidth(), this.anim.getHeight());
+        Rectangle rectPlayer = new Rectangle(this.positionX +20, this.positionY+20, this.anim.getWidth(), this.anim.getHeight());
         for (FishObject fishObject : FishEnemyManager.getInstance().getVectorFishObject()) {
             Rectangle rectFishObject = new Rectangle(fishObject.getPositionX(), fishObject.getPositionY(), fishObject.getWidth(), fishObject.getHeight());
             if (rectPlayer.intersects(rectFishObject)) {

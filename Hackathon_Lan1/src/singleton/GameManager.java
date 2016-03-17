@@ -1,9 +1,15 @@
 package singleton;
 
+import Menu.ScoreScene;
+
+import java.util.Stack;
+
 /**
  * Created by VinhNguyenDinh on 03/14/2016.
  */
 public class GameManager {
+    public Stack<ScoreScene> stackMenuGame;
+
     private int locationX;
     private int locationY;
     private int windowHeight;
@@ -16,6 +22,7 @@ public class GameManager {
     }
 
     private GameManager() {
+        stackMenuGame = new Stack<>();
         locationX = 0;
         locationY = 0;
     }

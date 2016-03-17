@@ -1,4 +1,4 @@
-package Scene;
+package Plant;
 
 import main.GameObject;
 
@@ -45,6 +45,22 @@ public class Coral extends GameObject {
             case 4 : {
                 try {
                     this.sprite = ImageIO.read(new File("Resources/image 46.png"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            }
+            case 5 : {
+                try {
+                    this.sprite = ImageIO.read(new File("Resources/image 43.png"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            }
+            case 6 : {
+                try {
+                    this.sprite = ImageIO.read(new File("Resources/image 44.png"));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

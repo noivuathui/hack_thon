@@ -26,19 +26,19 @@ public class Define {
     public static final int JELLY_FISH_START = 525;
     public static final int JELLY_FISH_END = 553;
 
-    // ca dich
-    public static final int FISH_ENEMY_START = 310;
-    public static final int FISH_ENEMY_END = 338;
+    // FishEnemy : cá mập
+    public static final int FISH_ENEMY_START = 471;
+    public static final int FISH_ENEMY_END = 497;
     public static final int FISH_ENEMY_FLIP_START = 341;
     public static final int FISH_ENEMY_FLIP_END = 353;
 
-    // Ca dich nho
+    // EnemySmall
     public static final int FISH_ENEMY_SMALL_START = 310;
     public static final int FISH_ENEMY_SMALL_END = 338;
     public static final int FISH_ENEMY_SMALL_FLIP_START = 341;
     public static final int FISH_ENEMY_SMALL_FLIP_END = 353;
 
-    // Ca doc
+    // FishCaDoc : cá nóc..
     public static final int FISH_CA_DOC_START = 611;
     public static final int FISH_CA_DOC_END = 639;
     public static final int FISH_CA_DOC_FLIP_START = 342;
@@ -46,7 +46,7 @@ public class Define {
     public static final int FISH_CA_DOC_EAT_START = 457;
     public static final int FISH_CA_DOC_EAT_END = 467;
 
-    // Ca phat sang
+    // FlashlightFish : cá mồm to..
     public static final int FLASH_LIGHT_FISH_START = 415;
     public static final int FLASH_LIGHT_FISH_END = 443;
     public static final int FLASH_LIGHT_FISH_FLIP_START = 446;

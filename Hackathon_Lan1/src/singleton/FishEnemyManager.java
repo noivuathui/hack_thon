@@ -1,6 +1,6 @@
 package singleton;
 
-import Scene.Coral;
+import Plant.Coral;
 import fish.*;
 import java.util.Vector;
 

@@ -10,8 +10,6 @@ import java.awt.*;
  */
 public class FishEnemy extends FishObject {
     private int direction; // 1.Left - 2.Right
-    private int start;
-    private int end;
     private int delta;
     private Animation anim;
     private Animation anim_flip;

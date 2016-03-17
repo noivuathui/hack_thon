@@ -1,6 +1,6 @@
 package main;
 
-import Scene.Coral;
+import Plant.Coral;
 import fish.*;
 import graphics.Topic;
 import singleton.FishEnemyManager;
@@ -109,10 +109,12 @@ public class GameWindow extends Frame implements Runnable {
         for(JellyFish jellyFish : vectorJellyFish) {
             jellyFish.draw(g);
         }
+
+        PlayerManager.getInstance().getPlayer().draw(g);
+
         for(Coral coral : coralVector){
             coral.draw(g);
         }
-        PlayerManager.getInstance().getPlayer().draw(g);
     }
 
     private boolean check = true;
