@@ -9,7 +9,6 @@ import java.util.Vector;
  */
 public class FishEnemyManager {
     private Vector<FishObject> vectorFishObject;
-    private Vector<JellyFish> vectorJellyFish;
     private Vector<Coral> vectorCoral;
 
     private static FishEnemyManager ourInstance = new FishEnemyManager();
@@ -20,16 +19,11 @@ public class FishEnemyManager {
 
     private FishEnemyManager(){
         vectorFishObject = new Vector<>();
-        vectorJellyFish = new Vector<>();
         vectorCoral = new Vector<>();
     }
 
     public Vector<FishObject> getVectorFishObject() {
         return vectorFishObject;
-    }
-
-    public Vector<JellyFish> getVectorJellyFish() {
-        return vectorJellyFish;
     }
 
     public Vector<Coral> getVectorCoral() {

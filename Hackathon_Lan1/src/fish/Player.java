@@ -91,7 +91,7 @@ public class Player extends FishObject {
         Rectangle rectPlayer = new Rectangle(this.positionX, this.positionY, this.anim.getWidth(), this.anim.getHeight());
         for (FishObject fishObject : FishEnemyManager.getInstance().getVectorFishObject()) {
             Rectangle rectFishObject = new Rectangle(fishObject.getPositionX(), fishObject.getPositionY(), fishObject.getWidth(), fishObject.getHeight());
-            if (rectPlayer.intersects(rectFishObject)) {
+            if (rectPlayer.intersects(rectFishObject)  && !(fishObject instanceof JellyFish)) {
                 FishEnemyManager.getInstance().getVectorFishObject().remove(FishEnemyManager.getInstance().getVectorFishObject().indexOf(fishObject));
                 return true;
             }
