@@ -9,8 +9,6 @@ import java.awt.*;
  * Created by noivu on 3/15/2016.
  */
 public class FishEnemySmall extends FishObject {
-    private Animation anim;
-    private Animation anim_flip;
     private boolean check = true;
 
     public FishEnemySmall(int positionX, int positionY, int speed) {
@@ -19,18 +17,18 @@ public class FishEnemySmall extends FishObject {
     }
 
     private void initAnimation(){
-        anim = new Animation(Define.FISH_ENEMY_SMALL_START,Define.FISH_ENEMY_SMALL_END,50);
-        anim_flip = new Animation(Define.FISH_ENEMY_SMALL_FLIP_START,Define.FISH_ENEMY_SMALL_FLIP_END,50);
+        animationNormal = new Animation(Define.FISH_ENEMY_SMALL_START,Define.FISH_ENEMY_SMALL_END,50);
+        animationFlip = new Animation(Define.FISH_ENEMY_SMALL_FLIP_START,Define.FISH_ENEMY_SMALL_FLIP_END,50);
     }
 
     private int count = 0;
     public void draw(Graphics g) {
         if(check) {
-            anim.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),
+            animationNormal.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),
                     getPositionY() + GameManager.getInstance().getLocationY());
         }
         else {
-            anim_flip.draw(g, positionX + GameManager.getInstance().getLocationX()
+            animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
                     , positionY + GameManager.getInstance().getLocationY());
             count++;
             if(count > 20) {
@@ -49,10 +47,10 @@ public class FishEnemySmall extends FishObject {
         xVelocity =  ( int )  ( speed * Math . cos ( direction ));
         yVelocity =  ( int )  ( speed * Math . sin ( direction ));
         if(xVelocity > 0){
-            anim.setFlipX(-1);
+            animationNormal.setFlipX(-1);
             check = false;
         } else {
-            anim.setFlipX(1);
+            animationNormal.setFlipX(1);
         }
     }
 
@@ -83,10 +81,25 @@ public class FishEnemySmall extends FishObject {
     }
 
     public int getWidth() {
-        return anim.getWidth();
+        return animationNormal.getWidth();
     }
 
     public int getHeight() {
-        return anim.getHeight();
+        return animationNormal.getHeight();
+    }
+
+    @Override
+    public Animation getAnimationNormal() {
+        return animationNormal;
+    }
+
+    @Override
+    public Animation getAnimationFlip() {
+        return animationFlip;
+    }
+
+    @Override
+    public Animation getAnimationEat() {
+        return null;
     }
 }

@@ -10,18 +10,16 @@ import java.awt.*;
  * Created by noivu on 3/15/2016.
  */
 public class JellyFish extends FishObject {
-    private Animation anim;
-
     public JellyFish(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
         initAnimation();
     }
 
     private void initAnimation(){
-        anim = new Animation(Define.JELLY_FISH_START,Define.JELLY_FISH_END,50);
+        animationNormal = new Animation(Define.JELLY_FISH_START,Define.JELLY_FISH_END,50);
     }
     public void draw(Graphics g) {
-        anim.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),
+        animationNormal.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),
                 getPositionY() + GameManager.getInstance().getLocationY());
     }
 
@@ -40,10 +38,25 @@ public class JellyFish extends FishObject {
     }
 
     public int getWidth() {
-        return anim.getWidth();
+        return animationNormal.getWidth();
     }
 
     public int getHeight() {
-        return anim.getHeight();
+        return animationNormal.getHeight();
+    }
+
+    @Override
+    public Animation getAnimationNormal() {
+        return animationNormal;
+    }
+
+    @Override
+    public Animation getAnimationFlip() {
+        return null;
+    }
+
+    @Override
+    public Animation getAnimationEat() {
+        return null;
     }
 }

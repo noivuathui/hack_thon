@@ -1,6 +1,6 @@
 package main;
 
-import Plant.Coral;
+import Scene.Coral;
 import fish.*;
 import graphics.Topic;
 import singleton.FishEnemyManager;
@@ -21,7 +21,6 @@ public class GameWindow extends Frame implements Runnable {
     Image image;
     BufferedImage background;
     Vector<FishObject>  vectorFishObject;
-    Vector<JellyFish> vectorJellyFish;
     Vector<Coral> coralVector;
 
 
@@ -67,7 +66,6 @@ public class GameWindow extends Frame implements Runnable {
 
     private void initFish() {
         vectorFishObject =  FishEnemyManager.getInstance().getVectorFishObject();
-        vectorJellyFish = FishEnemyManager.getInstance().getVectorJellyFish();
         coralVector = FishEnemyManager.getInstance().getVectorCoral();
 
         vectorFishObject.add(new FishEnemy(350,300,2));
@@ -78,8 +76,8 @@ public class GameWindow extends Frame implements Runnable {
         vectorFishObject.add(new FishEnemySmall(120,80,2));
         vectorFishObject.add(new FlashlightFish(50,50,4));
         vectorFishObject.add(new FlashlightFish(90,200,2));
-        vectorJellyFish.add(new JellyFish(30,600,2));
-        vectorJellyFish.add(new JellyFish(500,600,1));
+        vectorFishObject.add(new JellyFish(30,600,2));
+        vectorFishObject.add(new JellyFish(500,600,1));
 
         coralVector.add(new Coral(80,480,1));
         coralVector.add(new Coral(630,480,2));
@@ -106,15 +104,10 @@ public class GameWindow extends Frame implements Runnable {
         for(FishObject fishObject : vectorFishObject) {
             fishObject.draw(g);
         }
-        for(JellyFish jellyFish : vectorJellyFish) {
-            jellyFish.draw(g);
-        }
-
-        PlayerManager.getInstance().getPlayer().draw(g);
-
         for(Coral coral : coralVector){
             coral.draw(g);
         }
+        PlayerManager.getInstance().getPlayer().draw(g);
     }
 
     private boolean check = true;
@@ -125,9 +118,6 @@ public class GameWindow extends Frame implements Runnable {
             PlayerManager.getInstance().getPlayer().update();
             for(FishObject fishObject : vectorFishObject) {
                 fishObject.update();
-            }
-            for(JellyFish jellyFish : vectorJellyFish) {
-                jellyFish.update();
             }
             for(Coral coral : coralVector){
                 coral.update();
