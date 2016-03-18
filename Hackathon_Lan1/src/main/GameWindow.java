@@ -5,6 +5,7 @@ import fish.enemy.FishEnemy;
 import fish.enemy.FishEnemySmall;
 import fish.enemy.FlashlightFish;
 import fish.enemy.JellyFish;
+import fish.object.FishEnemyObject;
 import fish.object.FishObject;
 import graphics.Topic;
 import singleton.FishEnemyManager;
@@ -106,6 +107,7 @@ public class GameWindow extends Frame implements Runnable {
         g.drawImage(image,0,0,null);
     }
 
+    public boolean check = true;
     @Override
     public void paint(Graphics g) {
         g.drawImage(background,0,0,null);
@@ -116,6 +118,7 @@ public class GameWindow extends Frame implements Runnable {
             coral.draw(g);
         }
         PlayerManager.getInstance().getPlayer().draw(g);
+
     }
 
     @Override

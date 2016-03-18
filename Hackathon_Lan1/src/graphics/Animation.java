@@ -84,12 +84,6 @@ public class Animation extends GameObject {
         return imageVector;
     }
 
-//    public void remove() {
-//        for(Image image : imageVector) {
-//            image.
-//        }
-//    }
-
     public int getWidth() {
         return width;
     }
