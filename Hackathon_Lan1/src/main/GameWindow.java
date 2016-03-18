@@ -26,11 +26,11 @@ public class GameWindow extends Frame implements Runnable {
 
     public GameWindow() {
         this.setTitle(Topic.TITLE);
-        this.setSize(800, 600);
+        this.setSize(1000, 700);
         this.setVisible(true);
         this.setResizable(false);
         this.setLocation(250,80);
-
+        Music.music("sound");
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -79,8 +79,8 @@ public class GameWindow extends Frame implements Runnable {
         vectorFishObject.add(new JellyFish(30,600,2));
         vectorFishObject.add(new JellyFish(500,600,1));
 
-        coralVector.add(new Coral(80,480,1));
-        coralVector.add(new Coral(630,480,2));
+        coralVector.add(new Coral(80,580,1));
+        coralVector.add(new Coral(730,580,2));
         coralVector.add(new Coral(300,20,3));
         coralVector.add(new Coral(450,20,4));
     }
@@ -110,28 +110,12 @@ public class GameWindow extends Frame implements Runnable {
         PlayerManager.getInstance().getPlayer().draw(g);
     }
 
-    private boolean check = true;
-    private int count = 0;
     @Override
     public void run() {
         while(true) {
             PlayerManager.getInstance().getPlayer().update();
             for(FishObject fishObject : vectorFishObject) {
                 fishObject.update();
-            }
-            for(Coral coral : coralVector){
-                coral.update();
-            }
-            if(count >= 0) {
-                count++;
-                if(check) {
-                    Music.music("sound");
-                    check = false;
-                }
-                if(count > 200) {
-                    count = 0;
-                    check = true;
-                }
             }
             repaint();
             try {

@@ -69,13 +69,9 @@ public class Coral extends GameObject {
         }
     }
 
-    public void move(){
-
-    }
-
     @Override
     public void update() {
-        this.move();
+
     }
 
     @Override

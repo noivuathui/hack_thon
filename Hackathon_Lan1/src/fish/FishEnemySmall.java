@@ -43,21 +43,18 @@ public class FishEnemySmall extends FishObject {
     private int yVelocity =  1 ;
     public  void setRandomDirection ()  {
         double direction =  Math . random ()* 3.0 * Math . PI ;
-
         xVelocity =  ( int )  ( speed * Math . cos ( direction ));
         yVelocity =  ( int )  ( speed * Math . sin ( direction ));
         if(xVelocity > 0){
             animationNormal.setFlipX(-1);
-            check = false;
         } else {
             animationNormal.setFlipX(1);
         }
     }
 
     public void move() {
-       //added
-            positionX += xVelocity;
-            positionY += yVelocity;
+        positionX += xVelocity;
+        positionY += yVelocity;
         if  ( positionX >= Define.RIGHT_WALL )  {
             positionX = Define.RIGHT_WALL ;
             setRandomDirection ();

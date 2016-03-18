@@ -13,11 +13,11 @@ import java.awt.*;
 public class Player extends FishObject {
     private int level;
     private int direction; // 1.Left - 2.Right
+    private int health;
     private int start;
     private int end;
     private int start_eat;
     private int end_eat;
-    private boolean check = true;
 
     private void initAnimation() {
         if(level == 1) {
@@ -34,45 +34,78 @@ public class Player extends FishObject {
         }
         animationNormal  = new Animation(start,end,50);
         animationEat  = new Animation(start_eat,end_eat,50);
+        switch (level) {
+            case 1:
+                animationFlip = new Animation(Define.FISH_LEVEL1_FLIP_START, Define.FISH_LEVEL1_FLIP_END, 50);
+                break;
+            case 2:
+                animationFlip = new Animation(Define.FISH_LEVEL2_FLIP_START, Define.FISH_LEVEL2_FLIP_END, 50);
+                break;
+            case 3:
+                animationFlip = new Animation(Define.FISH_LEVEL3_FLIP_START, Define.FISH_LEVEL3_FLIP_END, 50);
+                break;
+        }
     }
 
     public Player(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
         this.direction = 1;
-        this.level = 1;
+        this.level = 2;
+        this.health = 100;
         initAnimation();
     }
 
     private int count = 0;
     public void draw(Graphics g) {
-        if(check) {
+        if(checkEat == false && checkFlip == false) {
             animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()
                     , positionY + GameManager.getInstance().getLocationY());
         }
         else {
-            animationEat.draw(g, positionX + GameManager.getInstance().getLocationX()
-                    , positionY + GameManager.getInstance().getLocationY());
+            if(checkEat == true) {
+                animationEat.draw(g, positionX + GameManager.getInstance().getLocationX()
+                        , positionY + GameManager.getInstance().getLocationY());
+            }
+            else if(checkFlip == true) {
+                //if(direction )
+                animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
+                        , positionY + GameManager.getInstance().getLocationY());
+            }
             count++;
             if(count > 17) {
                 count = 0;
-                check = true;
+                if(checkEat)    checkEat = false;
+                if(checkFlip)   checkFlip = false;
             }
         }
     }
 
+    private int oldX;
+    private int oldY;
     public void move(int positionX, int positionY) {
         this.positionX = positionX;
         this.positionY = positionY;
+        if(positionX > oldX + 10) {
+            animationNormal.setFlipX(-1);
+            checkFlip = true;
+            this.direction = 2;
+        }
+        else if(positionX < oldX - 10){
+            animationNormal.setFlipX(1);
+            animationFlip.setFlipX(1);
+            checkFlip = true;
+            this.direction = 1;
+        }
     }
 
-    int kt = 1;
     public void update() {
         super.update();
         this.move(this.positionX, this.positionY);
-        if(checkCollisionEnemy() == true) {
-            check = false;
+        if(checkCollisionEnemy()) {
+            checkEat = true;
             Music.music("sound2");
         }
+        oldX = positionX;   oldY = positionY;
     }
 
     private boolean checkCollisionEnemy() {
@@ -96,22 +129,6 @@ public class Player extends FishObject {
         return false;
     }
 
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public int getDirection() {
-        return direction;
-    }
-
-    public void setDirection(int direction) {
-        this.direction = direction;
-    }
-
     @Override
     public int getWidth() {
         return animationNormal.getWidth();
@@ -129,7 +146,7 @@ public class Player extends FishObject {
 
     @Override
     public Animation getAnimationFlip() {
-        return null;
+        return animationFlip;
     }
 
     @Override
