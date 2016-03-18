@@ -73,7 +73,7 @@ public class FishEnemySmall extends FishEnemyObject {
             positionY = Define.UP_WALL ;
             setRandomDirection ();
         }
-        }
+    }
 
     public void update(){
         this.move();
