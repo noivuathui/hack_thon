@@ -1,6 +1,7 @@
 package main;
 
 import Plant.Coral;
+import Plant.PlantObject;
 import fish.enemy.FishEnemy;
 import fish.enemy.FishEnemySmall;
 import fish.enemy.FlashlightFish;
@@ -28,7 +29,6 @@ public class GameWindow extends Frame implements Runnable {
     BufferedImage background;
     Vector<FishObject>  vectorFishObject;
     Vector<Coral> coralVector;
-
 
     public GameWindow() {
         this.setTitle(Topic.TITLE);
@@ -78,10 +78,15 @@ public class GameWindow extends Frame implements Runnable {
         vectorFishObject.add(new FishEnemy(400,200,2));
         vectorFishObject.add(new FishEnemy(550,100,2));
         vectorFishObject.add(new FishEnemy(350,400,2));
+
         vectorFishObject.add(new FishEnemySmall(200,50,3));
         vectorFishObject.add(new FishEnemySmall(120,80,2));
+        vectorFishObject.add(new FishEnemySmall(50,50,3));
+        vectorFishObject.add(new FishEnemySmall(70,80,2));
+
         vectorFishObject.add(new FlashlightFish(50,50,4));
         vectorFishObject.add(new FlashlightFish(90,200,2));
+
         vectorFishObject.add(new JellyFish(30,600,2));
         vectorFishObject.add(new JellyFish(500,600,1));
 
