@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc83fdd2-e15c-4be8-8ed7-f3cf3abfd603" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/image 876.jpg" afterPath="$PROJECT_DIR$/Resources/image 876.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/Scene/Coral.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/Scene/Coral.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/Define.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/Define.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/FishCaDoc.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/FishCaDoc.class" />
@@ -13,14 +12,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/graphics/Topic.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/graphics/Topic.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/main/GameWindow.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/main/GameWindow.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Scene/Coral.java" afterPath="$PROJECT_DIR$/src/Scene/Coral.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/Define.java" afterPath="$PROJECT_DIR$/src/fish/Define.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/FishEnemySmall.java" afterPath="$PROJECT_DIR$/src/fish/FishEnemySmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/FishObject.java" afterPath="$PROJECT_DIR$/src/fish/FishObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/FlashlightFish.java" afterPath="$PROJECT_DIR$/src/fish/FlashlightFish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/Player.java" afterPath="$PROJECT_DIR$/src/fish/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphics/Topic.java" afterPath="$PROJECT_DIR$/src/graphics/Topic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/GameWindow.java" afterPath="$PROJECT_DIR$/src/main/GameWindow.java" />
     </list>
     <ignored path="Hackathon_Lan1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -730,7 +721,14 @@
       <option name="project" value="LOCAL" />
       <updated>1458242275463</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="update">
+      <created>1458308267299</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1458308267299</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -820,6 +818,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="8" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -878,6 +877,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="8" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -936,6 +936,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -994,6 +995,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1048,6 +1050,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="1300" column="0" selection-start-line="1300" selection-start-column="0" selection-end-line="1300" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1055,6 +1058,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,6 +1149,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
