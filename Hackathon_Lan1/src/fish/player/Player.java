@@ -7,14 +7,20 @@ import fish.object.FishPlayerObject;
 import graphics.Animation;
 import singleton.FishEnemyManager;
 import singleton.GameManager;
+import singleton.PlayerManager;
 import sound.Music;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
 /**
  * Created by VinhNguyenDinh on 03/13/2016.
  */
 public class Player extends FishPlayerObject {
-    private static boolean Lose = false;
+    private boolean Lose = false;
     private int dir; //1 quay tra 2 quay phai
 
 
@@ -81,7 +87,7 @@ public class Player extends FishPlayerObject {
                 checkEat = false;
             }
         }
-        else if(checkFlip =true){
+        else if(checkFlip =true) {
             animationFlip.draw(g,positionX + GameManager.getInstance().getLocationX(),
                     positionY + GameManager.getInstance().getLocationY());
             count++;
@@ -194,11 +200,11 @@ public class Player extends FishPlayerObject {
         this.oldY = oldY;
     }
 
-    public static boolean isLose() {
+    public boolean isLose() {
         return Lose;
     }
 
-    public static void setLose(boolean lose) {
+    public void setLose(boolean lose) {
         Lose = lose;
     }
 }
