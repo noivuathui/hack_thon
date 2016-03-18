@@ -15,6 +15,8 @@ import java.awt.*;
  */
 public class Player extends FishPlayerObject {
     protected static boolean Lose = false;
+    private int dir; //1 quay tra 2 quay phai
+
 
     private void initAnimation() {
         if(level == 1) {
@@ -36,7 +38,7 @@ public class Player extends FishPlayerObject {
                 animationFlip = new Animation(Define.FISH_LEVEL1_FLIP_START, Define.FISH_LEVEL1_FLIP_END, 50);
                 break;
             case 2:
-                animationFlip = new Animation(Define.FISH_LEVEL2_FLIP_START, Define.FISH_LEVEL2_FLIP_END, 50);
+                animationFlip = new Animation(Define.FISH_LEVEL2_FLIP_START, Define.FISH_LEVEL2_FLIP_END, 100);
                 break;
             case 3:
                 animationFlip = new Animation(Define.FISH_LEVEL3_FLIP_START, Define.FISH_LEVEL3_FLIP_END, 50);
@@ -46,45 +48,67 @@ public class Player extends FishPlayerObject {
 
     public Player(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
-        this.direction = 1;
-        this.level = 1;
+        this.dir = 2;
+        this.level = 2;
         this.health = 100;
+        checkFlip = false;
         initAnimation();
     }
 
-    private int count = 0;
 
+    private boolean checkFlip(){
+
+            if(this.dir != this.oldDir){
+
+                return true;
+            }
+
+        return false;
+    }
+
+    private int count = 0;
     public void draw(Graphics g) {
-        if(checkEat == false) {
+        if(checkEat == false && checkFlip == false) {
             animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()+animationNormal.getWidth()/2
                     , positionY + GameManager.getInstance().getLocationY());
         }
-        else  {
+        else if(checkEat==true) {
             animationEat.draw(g, positionX + GameManager.getInstance().getLocationX()
                         , positionY + GameManager.getInstance().getLocationY());
             count++;
             if(count > 17) {
                 count = 0;
                 checkEat = false;
+                checkFlip = false;
             }
         }
-        if(checkCollisionEnemy()){
-            diem += 5;
-            g.drawString("diem cua ban la : " + diem, 300, 50);
+        else if(checkFlip =true){
+            animationFlip.draw(g,positionX + GameManager.getInstance().getLocationX(),
+                    positionY + GameManager.getInstance().getLocationY());
+            count++;
+            if(count > 34){
+                count = 0;
+                checkFlip =false;
+                checkEat = false;
+            }
         }
     }
 
     private int oldX;
     private int oldY;
+    private int oldDir = 0;
     public void move(int positionX, int positionY) {
         this.positionX = positionX;
         this.positionY = positionY;
         if(positionX > oldX) {
             animationNormal.setFlipX(-1);
+            this.dir = 1;
         }
         else if(positionX < oldX){
             animationNormal.setFlipX(1);
+            this.dir = 2;
         }
+
     }
 
     public int diem = 0;
@@ -101,8 +125,13 @@ public class Player extends FishPlayerObject {
             checkEat = true;
             Music.music("sound2");
         }
+        if(checkFlip()){
+            checkFlip = true;
+        }
         oldX = positionX;
         oldY = positionY;
+        oldDir = this.dir;
+
     }
 
     private boolean checkCollisionEnemy() {
