@@ -14,7 +14,7 @@ public class PlayerManager {
     }
 
     private PlayerManager() {
-        player = new Player(600,770,2);
+        player = new Player(300,300,2);
     }
 
     public Player getPlayer() {
