@@ -30,28 +30,6 @@ public class FishEnemy extends FishEnemyObject {
         animationFlip = new Animation(Define.FISH_ENEMY_FLIP_START,Define.FISH_ENEMY_FLIP_END,delta);
     }
 
-    private int count = 0;
-    public void draw(Graphics g) {
-       if(check) {
-            animationNormal.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),
-                    getPositionY() + GameManager.getInstance().getLocationY());
-        }
-        else {
-            animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
-                    , positionY + GameManager.getInstance().getLocationY());
-            count++;
-            if(count > 20) {
-                count = 0;
-                check = true;
-            }
-        }
-    }
-
-    @Override
-    public void move() {
-        super.move();
-    }
-
 //    public boolean checkCollision() {
 //        Rectangle rectEnemy = new Rectangle(positionX, positionY, sprite.getWidth(), sprite.getHeight());
 //
@@ -63,9 +41,7 @@ public class FishEnemy extends FishEnemyObject {
 //        return rectEnemy.intersects(rectPlay);
 //    }
 
-    public void update(){
-        this.move();
-    }
+
     @Override
     public int getWidth() {
         return animationNormal.getWidth();

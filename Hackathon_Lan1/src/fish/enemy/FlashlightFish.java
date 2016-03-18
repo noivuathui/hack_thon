@@ -23,41 +23,6 @@ public class FlashlightFish extends FishEnemyObject {
         animationEat = new Animation(Define.FLASH_LIGHT_FISH_EAT_START, Define.FLASH_LIGHT_FISH_EAT_END, 50);
     }
 
-    private int count = 0;
-    public void draw(Graphics g) {
-        if(checkEat == false) {
-            animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()
-                    , positionY + GameManager.getInstance().getLocationY());
-        }
-        else {
-            //if(checkEat == true) {
-                animationEat.draw(g, positionX + GameManager.getInstance().getLocationX()
-                        , positionY + GameManager.getInstance().getLocationY());
-            }
-//            else if(checkFlip == true) {
-//                animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
-//                        , positionY + GameManager.getInstance().getLocationY());
-//            }
-            count++;
-            if(count > 17) {
-                count = 0;
-                //if(checkEat)
-                    checkEat = false;
-                //if(checkFlip)
-                    //checkFlip = false;
-            }
-        }
-   // }
-
-    @Override
-    public void move() {
-        super.move();
-    }
-
-    public void update(){
-        this.move();
-    }
-
     public int getWidth() {
         return animationNormal.getWidth();
     }

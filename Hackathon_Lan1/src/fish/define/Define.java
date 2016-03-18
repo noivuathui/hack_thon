@@ -35,8 +35,8 @@ public class Define {
     // FishEnemy : cá mập
     public static final int FISH_ENEMY_START = 471;
     public static final int FISH_ENEMY_END = 497;
-    public static final int FISH_ENEMY_FLIP_START = 341;
-    public static final int FISH_ENEMY_FLIP_END = 353;
+    public static final int FISH_ENEMY_FLIP_START = 500;
+    public static final int FISH_ENEMY_FLIP_END = 508;
 
     // EnemySmall
     public static final int FISH_ENEMY_SMALL_START = 310;

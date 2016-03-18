@@ -1,5 +1,6 @@
 package fish.player;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
 import fish.define.Define;
 import fish.enemy.JellyFish;
 import fish.object.FishObject;
@@ -9,7 +10,12 @@ import singleton.FishEnemyManager;
 import singleton.GameManager;
 import sound.Music;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
 /**
  * Created by VinhNguyenDinh on 03/13/2016.
  */
@@ -68,13 +74,14 @@ public class Player extends FishPlayerObject {
 
     private int count = 0;
     public void draw(Graphics g) {
-        if(checkEat == false && checkFlip == false) {
+        if(checkEat == false && checkFlip == false&&Lose == false) {
             animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()+animationNormal.getWidth()/2
                     , positionY + GameManager.getInstance().getLocationY());
         }
         else if(checkEat==true) {
             animationEat.draw(g, positionX + GameManager.getInstance().getLocationX()
                         , positionY + GameManager.getInstance().getLocationY());
+
             count++;
             if(count > 17) {
                 count = 0;
@@ -82,7 +89,7 @@ public class Player extends FishPlayerObject {
                 checkFlip = false;
             }
         }
-        else if(checkFlip =true){
+        else if(checkFlip ==true){
             animationFlip.draw(g,positionX + GameManager.getInstance().getLocationX(),
                     positionY + GameManager.getInstance().getLocationY());
             count++;
@@ -92,6 +99,21 @@ public class Player extends FishPlayerObject {
                 checkEat = false;
             }
         }
+        else  if(Lose == true){
+
+            BufferedImage image = null;
+            try {
+                image = ImageIO.read(new File("Resources/gameover.png"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            g.drawImage(image, 300, 300,null);
+                this.positionX =-1000;
+                this.positionY =-1000;
+
+
+        }
+
     }
 
     private int oldX;
@@ -116,26 +138,35 @@ public class Player extends FishPlayerObject {
     public void update() {
         super.update();
         this.move(this.positionX, this.positionY);
-        if(checkCollisionEnemy()) {
+        if (checkCollisionEnemy()) {
             eat++;
-            if(eat <=4){
+            if (eat <= 4) {
                 eat = 0;
                 level++;
             }
-            checkEat = true;
-            Music.music("sound2");
+            if (s1 > s2) {
+                checkEat = true;
+
+                Music.music("sound2");
+
+            }else {
+                Lose =true;
+            }
         }
-        if(checkFlip()){
-            checkFlip = true;
-        }
-        oldX = positionX;
-        oldY = positionY;
-        oldDir = this.dir;
+            if (checkFlip()) {
+                checkFlip = true;
+            }
+            oldX = positionX;
+            oldY = positionY;
+            oldDir = this.dir;
+
 
     }
 
+    public double s1, s2;
+
     private boolean checkCollisionEnemy() {
-        double s1, s2;
+
         Rectangle rectPlayer = new Rectangle(this.positionX, this.positionY, animationNormal.getWidth(), animationNormal.getHeight());
         s1 = animationNormal.getWidth() * animationNormal.getHeight();
         for (FishObject fishObject : FishEnemyManager.getInstance().getVectorFishObject()) {
@@ -143,13 +174,15 @@ public class Player extends FishPlayerObject {
             s2 = fishObject.getWidth() * fishObject.getHeight();
             if(rectPlayer.intersects(rectFishObject)&& !(fishObject instanceof JellyFish)) {
                 if (s1 >= s2 ) {
+                    //System.out.println("awn roi ne");
                     FishEnemyManager.getInstance().getVectorFishObject().remove(FishEnemyManager.getInstance().getVectorFishObject().indexOf(fishObject));
                     return true;
                 }
                 else {
 
+                   // System.out.println("cham duoc roi");
 
-                    return false;
+                    return true;
                 }
             }
         }

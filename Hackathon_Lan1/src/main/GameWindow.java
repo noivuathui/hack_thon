@@ -131,6 +131,8 @@ public class GameWindow extends Frame implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+
         }
     }
 }

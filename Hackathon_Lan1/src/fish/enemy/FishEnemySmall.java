@@ -24,29 +24,6 @@ public class FishEnemySmall extends FishEnemyObject {
         animationFlip = new Animation(Define.FISH_ENEMY_SMALL_FLIP_START,Define.FISH_ENEMY_SMALL_FLIP_END,50);
     }
 
-    private int count = 0;
-    public void draw(Graphics g) {
-        if(check) {
-            animationNormal.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),
-                    getPositionY() + GameManager.getInstance().getLocationY());
-        }
-        else {
-            animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
-                    , positionY + GameManager.getInstance().getLocationY());
-            count++;
-            if(count > 20) {
-                count = 0;
-                check = true;
-            }
-        }
-    }
-
-
-
-    public void update(){
-        this.move();
-    }
-
     public int getWidth() {
         return animationNormal.getWidth();
     }
