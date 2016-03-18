@@ -1,4 +1,4 @@
-package Scene;
+package Plant;
 
 import main.GameObject;
 

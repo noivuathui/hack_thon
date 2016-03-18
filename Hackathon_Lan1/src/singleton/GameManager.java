@@ -1,4 +1,7 @@
 package singleton;
+import graphics.Scene;
+
+import java.util.Stack;
 
 /**
  * Created by VinhNguyenDinh on 03/14/2016.
@@ -6,8 +9,7 @@ package singleton;
 public class GameManager {
     private int locationX;
     private int locationY;
-    private int windowHeight;
-    private int windowWidth;
+    public Stack<Scene> stackMenuGame;
 
     private static GameManager ourInstance = new GameManager();
 
@@ -18,6 +20,7 @@ public class GameManager {
     private GameManager() {
         locationX = 0;
         locationY = 0;
+        stackMenuGame = new Stack<Scene>();
     }
 
     public int getLocationX() {
@@ -34,21 +37,5 @@ public class GameManager {
 
     public void setLocationY(int locationY) {
         this.locationY = locationY;
-    }
-
-    public int getWindowHeight() {
-        return windowHeight;
-    }
-
-    public void setWindowHeight(int windowHeight) {
-        this.windowHeight = windowHeight;
-    }
-
-    public int getWindowWidth() {
-        return windowWidth;
-    }
-
-    public void setWindowWidth(int windowWidth) {
-        this.windowWidth = windowWidth;
     }
 }
