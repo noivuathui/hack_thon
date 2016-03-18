@@ -79,7 +79,6 @@ public class Player extends FishPlayerObject {
             if(count > 17) {
                 count = 0;
                 checkEat = false;
-                checkFlip = false;
             }
         }
         else if(checkFlip =true){
@@ -89,7 +88,6 @@ public class Player extends FishPlayerObject {
             if(count > 17){
                 count = 0;
                 checkFlip =false;
-                checkEat = false;
             }
         }
     }
@@ -143,6 +141,7 @@ public class Player extends FishPlayerObject {
             s2 = fishObject.getWidth() * fishObject.getHeight();
             if(rectPlayer.intersects(rectFishObject)&& !(fishObject instanceof JellyFish)) {
                 if (s1 >= s2 ) {
+                    //System.out.println("awn roi ne");
                     FishEnemyManager.getInstance().getVectorFishObject().remove(FishEnemyManager.getInstance().getVectorFishObject().indexOf(fishObject));
                     return true;
                 }
