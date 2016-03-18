@@ -1,6 +1,7 @@
 package singleton;
 
 import Plant.Coral;
+import fish.object.FishEnemyObject;
 import fish.object.FishObject;
 
 import java.util.Vector;
@@ -11,6 +12,7 @@ import java.util.Vector;
 public class FishEnemyManager {
     private Vector<FishObject> vectorFishObject;
     private Vector<Coral> vectorCoral;
+    private FishEnemyObject fishEnemyObject;
 
     private static FishEnemyManager ourInstance = new FishEnemyManager();
 
@@ -29,5 +31,9 @@ public class FishEnemyManager {
 
     public Vector<Coral> getVectorCoral() {
         return vectorCoral;
+    }
+
+    public FishEnemyObject getFishEnemyObject() {
+        return fishEnemyObject;
     }
 }

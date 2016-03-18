@@ -13,8 +13,6 @@ public abstract class FishObject extends GameObject {
     protected Animation animationNormal;
     protected Animation animationFlip;
     protected Animation animationEat;
-    protected static boolean checkEat = false;
-    protected static boolean checkFlip = false;
     protected int delta;
 
     FishObject(int positionX, int positionY, int speed) {
@@ -42,19 +40,4 @@ public abstract class FishObject extends GameObject {
 
     public abstract Animation getAnimationEat();
 
-    public static boolean getCheckEat() {
-        return checkEat;
-    }
-
-    public static void setCheckFlip(boolean checkFlip) {
-        FishObject.checkFlip = checkFlip;
-    }
-
-    public static void setCheckEat(boolean checkEat) {
-        FishObject.checkEat = checkEat;
-    }
-
-    public static boolean getCheckFlip() {
-        return checkFlip;
-    }
 }

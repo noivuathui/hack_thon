@@ -1,14 +1,11 @@
 package main;
 
 import Plant.Coral;
-import Plant.PlantObject;
 import fish.enemy.FishEnemy;
 import fish.enemy.FishEnemySmall;
 import fish.enemy.FlashlightFish;
 import fish.enemy.JellyFish;
 import fish.object.FishObject;
-import graphics.Animation;
-import graphics.MenuScene;
 import graphics.Topic;
 import singleton.FishEnemyManager;
 import singleton.GameManager;
@@ -37,7 +34,6 @@ public class GameWindow extends Frame implements Runnable {
         this.setVisible(true);
         this.setResizable(false);
         this.setLocation(250,80);
-        GameManager.getInstance().getStackMenuGame().push(new MenuScene());
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {

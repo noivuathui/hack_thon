@@ -1,7 +1,5 @@
 package singleton;
 
-import graphics.Scene;
-
 import java.util.Stack;
 
 /**
@@ -10,7 +8,6 @@ import java.util.Stack;
 public class GameManager {
     private int locationX;
     private int locationY;
-    private Stack<Scene> stackMenuGame;
     private static GameManager ourInstance = new GameManager();
 
     public static GameManager getInstance() {
@@ -18,13 +15,8 @@ public class GameManager {
     }
 
     private GameManager() {
-        stackMenuGame = new Stack<Scene>();
         locationX = 0;
         locationY = 0;
-    }
-
-    public Stack<Scene> getStackMenuGame() {
-        return stackMenuGame;
     }
 
     public int getLocationX() {

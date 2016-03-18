@@ -48,7 +48,7 @@ public class Player extends FishPlayerObject {
 
     public Player(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
-        this.dir = 0;
+        this.dir = 2;
         this.level = 2;
         this.health = 100;
         checkFlip = false;
@@ -100,15 +100,13 @@ public class Player extends FishPlayerObject {
     public void move(int positionX, int positionY) {
         this.positionX = positionX;
         this.positionY = positionY;
-        if(positionX > oldX) {
+        if(positionX > oldX + 10) {
             animationNormal.setFlipX(-1);
-            animationFlip.setFlipX(1);
-            this.dir = 2;
-        }
-        else if(positionX < oldX){
-            animationNormal.setFlipX(1);
-            animationFlip.setFlipX(-1);
             this.dir = 1;
+        }
+        else if(positionX < oldX - 10){
+            animationNormal.setFlipX(1);
+            this.dir = 2;
         }
 
     }
