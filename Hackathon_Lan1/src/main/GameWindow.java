@@ -1,11 +1,11 @@
 package main;
 
-import Scene.Coral;
+import Plant.Coral;
 import fish.*;
 import graphics.Topic;
 import singleton.FishEnemyManager;
 import singleton.PlayerManager;
-import sound.Music;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.*;
@@ -30,7 +30,6 @@ public class GameWindow extends Frame implements Runnable {
         this.setVisible(true);
         this.setResizable(false);
         this.setLocation(250,80);
-        Music.music("sound");
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {

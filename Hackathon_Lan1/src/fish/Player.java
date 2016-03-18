@@ -57,27 +57,28 @@ public class Player extends FishObject {
 
     private int count = 0;
     public void draw(Graphics g) {
-        if(checkEat == false && checkFlip == false) {
+        if(checkEat == false) {
             animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()
                     , positionY + GameManager.getInstance().getLocationY());
         }
-        else {
-            if(checkEat == true) {
-                animationEat.draw(g, positionX + GameManager.getInstance().getLocationX()
+        else if(checkEat == true) {
+            animationEat.draw(g, positionX + GameManager.getInstance().getLocationX()
                         , positionY + GameManager.getInstance().getLocationY());
-            }
-            else if(checkFlip == true) {
-                //if(direction )
-                animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
-                        , positionY + GameManager.getInstance().getLocationY());
-            }
             count++;
             if(count > 17) {
                 count = 0;
-                if(checkEat)    checkEat = false;
-                if(checkFlip)   checkFlip = false;
+                checkEat = false;
+                // if(checkFlip)   checkFlip = false;
             }
         }
+//            else if(checkFlip == true) {
+//                //if(direction == 1) {
+//                    animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
+//                            , positionY + GameManager.getInstance().getLocationY());
+//               // }
+//
+//            }
+
     }
 
     private int oldX;
@@ -87,14 +88,12 @@ public class Player extends FishObject {
         this.positionY = positionY;
         if(positionX > oldX + 10) {
             animationNormal.setFlipX(-1);
-            checkFlip = true;
-            this.direction = 2;
+            //checkFlip = true;
         }
         else if(positionX < oldX - 10){
             animationNormal.setFlipX(1);
-            animationFlip.setFlipX(1);
-            checkFlip = true;
-            this.direction = 1;
+//            animationFlip.setFlipX(1);
+//            checkFlip = true;
         }
     }
 
