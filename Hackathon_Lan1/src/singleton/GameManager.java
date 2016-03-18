@@ -1,9 +1,6 @@
 package singleton;
+
 import graphics.Scene;
-
-import java.util.Stack;
-
-import Menu.ScoreScene;
 
 import java.util.Stack;
 
@@ -11,12 +8,9 @@ import java.util.Stack;
  * Created by VinhNguyenDinh on 03/14/2016.
  */
 public class GameManager {
-    public Stack<ScoreScene> stackMenuGame;
-
     private int locationX;
     private int locationY;
-    public Stack<Scene> stackMenuGame;
-
+    private Stack<Scene> stackMenuGame;
     private static GameManager ourInstance = new GameManager();
 
     public static GameManager getInstance() {
@@ -24,10 +18,13 @@ public class GameManager {
     }
 
     private GameManager() {
-        stackMenuGame = new Stack<>();
+        stackMenuGame = new Stack<Scene>();
         locationX = 0;
         locationY = 0;
-        stackMenuGame = new Stack<Scene>();
+    }
+
+    public Stack<Scene> getStackMenuGame() {
+        return stackMenuGame;
     }
 
     public int getLocationX() {

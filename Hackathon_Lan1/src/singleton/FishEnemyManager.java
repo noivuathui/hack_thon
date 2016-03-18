@@ -1,7 +1,8 @@
 package singleton;
 
 import Plant.Coral;
-import fish.*;
+import fish.object.FishObject;
+
 import java.util.Vector;
 
 /**

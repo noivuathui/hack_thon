@@ -1,41 +1,47 @@
-package fish;
+package fish.enemy;
 
+import fish.define.Define;
+import fish.object.FishEnemyObject;
 import graphics.Animation;
 import singleton.GameManager;
 
 import java.awt.*;
 
 /**
- * Created by noivu on 3/15/2016.
+ * Created by Anh on 3/14/2016.
  */
-public class FishEnemySmall extends FishObject {
+public class FishEnemy extends FishEnemyObject {
+    private int direction; // 1.Left - 2.Right
+
     private boolean check = true;
 
-    public FishEnemySmall(int positionX, int positionY, int speed) {
+
+    public FishEnemy(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
         initAnimation();
     }
 
     private void initAnimation(){
-        animationNormal = new Animation(Define.FISH_ENEMY_SMALL_START,Define.FISH_ENEMY_SMALL_END,50);
-        animationFlip = new Animation(Define.FISH_ENEMY_SMALL_FLIP_START,Define.FISH_ENEMY_SMALL_FLIP_END,50);
+        delta = 50;
+        animationNormal = new Animation(Define.FISH_ENEMY_START,Define.FISH_ENEMY_END,delta);
+        animationFlip = new Animation(Define.FISH_ENEMY_FLIP_START,Define.FISH_ENEMY_FLIP_END,delta);
     }
 
     private int count = 0;
     public void draw(Graphics g) {
-        if(check) {
+       // if(check) {
             animationNormal.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),
                     getPositionY() + GameManager.getInstance().getLocationY());
-        }
-        else {
-            animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
-                    , positionY + GameManager.getInstance().getLocationY());
-            count++;
-            if(count > 20) {
-                count = 0;
-                check = true;
-            }
-        }
+//        }
+//        else {
+//            animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
+//                    , positionY + GameManager.getInstance().getLocationY());
+//            count++;
+//            if(count > 20) {
+//                count = 0;
+//                check = true;
+//            }
+//        }
     }
 
     //ham move()
@@ -47,16 +53,16 @@ public class FishEnemySmall extends FishObject {
         yVelocity =  ( int )  ( speed * Math . sin ( direction ));
         if(xVelocity > 0){
             animationNormal.setFlipX(-1);
+            check = false;
         } else {
             animationNormal.setFlipX(1);
         }
     }
-
     public void move() {
-        positionX += xVelocity;
-        positionY += yVelocity;
+        positionX += xVelocity ;
+        positionY += yVelocity ;  //added
         if  ( positionX >= Define.RIGHT_WALL )  {
-            positionX = Define.RIGHT_WALL ;
+              positionX = Define.RIGHT_WALL ;
             setRandomDirection ();
         }
         if  ( positionX <= Define.LEFT_WALL )  {
@@ -71,16 +77,17 @@ public class FishEnemySmall extends FishObject {
             positionY = Define.UP_WALL ;
             setRandomDirection ();
         }
-        }
+    }
 
     public void update(){
         this.move();
     }
-
+    @Override
     public int getWidth() {
         return animationNormal.getWidth();
     }
 
+    @Override
     public int getHeight() {
         return animationNormal.getHeight();
     }
@@ -99,4 +106,5 @@ public class FishEnemySmall extends FishObject {
     public Animation getAnimationEat() {
         return null;
     }
+
 }

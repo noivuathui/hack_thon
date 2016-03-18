@@ -1,6 +1,6 @@
 package singleton;
 
-import fish.Player;
+import fish.player.Player;
 
 /**
  * Created by VinhNguyenDinh on 03/13/2016.

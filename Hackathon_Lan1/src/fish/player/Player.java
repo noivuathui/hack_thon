@@ -1,23 +1,19 @@
-package fish;
+package fish.player;
 
+import fish.define.Define;
+import fish.enemy.JellyFish;
+import fish.object.FishObject;
+import fish.object.FishPlayerObject;
 import graphics.Animation;
 import singleton.FishEnemyManager;
 import singleton.GameManager;
-import singleton.PlayerManager;
 import sound.Music;
 
 import java.awt.*;
 /**
  * Created by VinhNguyenDinh on 03/13/2016.
  */
-public class Player extends FishObject {
-    private int level;
-    private int direction; // 1.Left - 2.Right
-    private int health;
-    private int start;
-    private int end;
-    private int start_eat;
-    private int end_eat;
+public class Player extends FishPlayerObject {
 
     private void initAnimation() {
         if(level == 1) {
@@ -61,24 +57,15 @@ public class Player extends FishObject {
             animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()
                     , positionY + GameManager.getInstance().getLocationY());
         }
-        else if(checkEat == true) {
+        else  {
             animationEat.draw(g, positionX + GameManager.getInstance().getLocationX()
                         , positionY + GameManager.getInstance().getLocationY());
             count++;
             if(count > 17) {
                 count = 0;
                 checkEat = false;
-                // if(checkFlip)   checkFlip = false;
             }
         }
-//            else if(checkFlip == true) {
-//                //if(direction == 1) {
-//                    animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
-//                            , positionY + GameManager.getInstance().getLocationY());
-//               // }
-//
-//            }
-
     }
 
     private int oldX;
@@ -88,12 +75,9 @@ public class Player extends FishObject {
         this.positionY = positionY;
         if(positionX > oldX + 10) {
             animationNormal.setFlipX(-1);
-            //checkFlip = true;
         }
         else if(positionX < oldX - 10){
             animationNormal.setFlipX(1);
-//            animationFlip.setFlipX(1);
-//            checkFlip = true;
         }
     }
 
@@ -120,7 +104,8 @@ public class Player extends FishObject {
                     return true;
                 }
                 else {
-                    System.out.println("Ca dich an player roi");
+                    //System.out.println("Ca dich an player roi");
+//
                     return false;
                 }
             }
@@ -151,5 +136,21 @@ public class Player extends FishObject {
     @Override
     public Animation getAnimationEat() {
         return animationEat;
+    }
+
+    public int getOldX() {
+        return oldX;
+    }
+
+    public void setOldX(int oldX) {
+        this.oldX = oldX;
+    }
+
+    public int getOldY() {
+        return oldY;
+    }
+
+    public void setOldY(int oldY) {
+        this.oldY = oldY;
     }
 }

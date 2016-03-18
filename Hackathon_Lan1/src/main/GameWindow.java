@@ -1,9 +1,15 @@
 package main;
 
 import Plant.Coral;
-import fish.*;
+import fish.enemy.FishEnemy;
+import fish.enemy.FishEnemySmall;
+import fish.enemy.FlashlightFish;
+import fish.enemy.JellyFish;
+import fish.object.FishObject;
+import graphics.MenuScene;
 import graphics.Topic;
 import singleton.FishEnemyManager;
+import singleton.GameManager;
 import singleton.PlayerManager;
 
 import javax.imageio.ImageIO;
@@ -30,6 +36,7 @@ public class GameWindow extends Frame implements Runnable {
         this.setVisible(true);
         this.setResizable(false);
         this.setLocation(250,80);
+        GameManager.getInstance().getStackMenuGame().push(new MenuScene());
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -107,6 +114,7 @@ public class GameWindow extends Frame implements Runnable {
             coral.draw(g);
         }
         PlayerManager.getInstance().getPlayer().draw(g);
+       // GameManager.getInstance().getStackMenuGame().peek().draw(g);
     }
 
     @Override
