@@ -32,19 +32,19 @@ public class FishEnemy extends FishEnemyObject {
 
     private int count = 0;
     public void draw(Graphics g) {
-       // if(check) {
+       if(check) {
             animationNormal.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),
                     getPositionY() + GameManager.getInstance().getLocationY());
-//        }
-//        else {
-//            animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
-//                    , positionY + GameManager.getInstance().getLocationY());
-//            count++;
-//            if(count > 20) {
-//                count = 0;
-//                check = true;
-//            }
-//        }
+        }
+        else {
+            animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
+                    , positionY + GameManager.getInstance().getLocationY());
+            count++;
+            if(count > 20) {
+                count = 0;
+                check = true;
+            }
+        }
     }
 
     @Override
@@ -52,22 +52,19 @@ public class FishEnemy extends FishEnemyObject {
         super.move();
     }
 
-    public boolean checkCollision() {
-        Rectangle rectEnemy = new Rectangle(positionX, positionY, sprite.getWidth(), sprite.getHeight());
-
-        Rectangle rectPlay =
-                new Rectangle(PlayerManager.getInstance().getPlayer().getPositionX()
-                        , PlayerManager.getInstance().getPlayer().getPositionY()
-                        , PlayerManager.getInstance().getPlayer().getWidth()
-                        , PlayerManager.getInstance().getPlayer().getHeight());
-        return rectEnemy.intersects(rectPlay);
-    }
+//    public boolean checkCollision() {
+//        Rectangle rectEnemy = new Rectangle(positionX, positionY, sprite.getWidth(), sprite.getHeight());
+//
+//        Rectangle rectPlay =
+//                new Rectangle(PlayerManager.getInstance().getPlayer().getPositionX()
+//                        , PlayerManager.getInstance().getPlayer().getPositionY()
+//                        , PlayerManager.getInstance().getPlayer().getWidth()
+//                        , PlayerManager.getInstance().getPlayer().getHeight());
+//        return rectEnemy.intersects(rectPlay);
+//    }
 
     public void update(){
         this.move();
-//        if(checkCollision()){
-//            PlayerManager.getInstance().getPlayer();
-//        }
     }
     @Override
     public int getWidth() {

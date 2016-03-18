@@ -48,7 +48,7 @@ public class Player extends FishPlayerObject {
 
     public Player(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
-        this.dir = 2;
+        this.dir = 0;
         this.level = 2;
         this.health = 100;
         checkFlip = false;
@@ -86,7 +86,7 @@ public class Player extends FishPlayerObject {
             animationFlip.draw(g,positionX + GameManager.getInstance().getLocationX(),
                     positionY + GameManager.getInstance().getLocationY());
             count++;
-            if(count > 34){
+            if(count > 17){
                 count = 0;
                 checkFlip =false;
                 checkEat = false;
@@ -102,11 +102,13 @@ public class Player extends FishPlayerObject {
         this.positionY = positionY;
         if(positionX > oldX) {
             animationNormal.setFlipX(-1);
-            this.dir = 1;
+            animationFlip.setFlipX(1);
+            this.dir = 2;
         }
         else if(positionX < oldX){
             animationNormal.setFlipX(1);
-            this.dir = 2;
+            animationFlip.setFlipX(-1);
+            this.dir = 1;
         }
 
     }

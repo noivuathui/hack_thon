@@ -1,6 +1,10 @@
 package fish.object;
 
 import fish.define.Define;
+import fish.enemy.JellyFish;
+import singleton.FishEnemyManager;
+
+import java.awt.*;
 
 /**
  * Created by VinhNguyenDinh on 03/18/2016.
@@ -45,5 +49,27 @@ public abstract class FishEnemyObject extends FishObject {
             positionY = Define.UP_WALL ;
             setRandomDirection ();
         }
+    }
+
+
+    private boolean checkCollisionEnemy() {
+        double s1, s2;
+        Rectangle rectPlayer = new Rectangle(this.positionX, this.positionY, animationNormal.getWidth(), animationNormal.getHeight());
+        s1 = animationNormal.getWidth() * animationNormal.getHeight();
+        for (FishObject fishObject : FishEnemyManager.getInstance().getVectorFishObject()) {
+            Rectangle rectFishObject = new Rectangle(fishObject.getPositionX(), fishObject.getPositionY(), fishObject.getWidth(), fishObject.getHeight());
+            s2 = fishObject.getWidth() * fishObject.getHeight();
+            if(rectPlayer.intersects(rectFishObject)&& !(fishObject instanceof JellyFish)) {
+                if (s1 >= s2 ) {
+                    FishEnemyManager.getInstance().getVectorFishObject().remove(FishEnemyManager.getInstance().getVectorFishObject().indexOf(fishObject));
+                    return false;
+                }
+                else {
+                    FishEnemyManager.getInstance().getVectorFishObject().remove(FishEnemyManager.getInstance().getVectorFishObject().indexOf(fishObject));
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

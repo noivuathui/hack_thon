@@ -25,29 +25,29 @@ public class FlashlightFish extends FishEnemyObject {
 
     private int count = 0;
     public void draw(Graphics g) {
-        if(checkEat == false && checkFlip == false) {
+        if(checkEat == false) {
             animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()
                     , positionY + GameManager.getInstance().getLocationY());
         }
         else {
-            if(checkEat == true) {
+            //if(checkEat == true) {
                 animationEat.draw(g, positionX + GameManager.getInstance().getLocationX()
                         , positionY + GameManager.getInstance().getLocationY());
             }
-            else if(checkFlip == true) {
-                animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
-                        , positionY + GameManager.getInstance().getLocationY());
-            }
+//            else if(checkFlip == true) {
+//                animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
+//                        , positionY + GameManager.getInstance().getLocationY());
+//            }
             count++;
             if(count > 17) {
                 count = 0;
                 //if(checkEat)
                     checkEat = false;
                 //if(checkFlip)
-                    checkFlip = false;
+                    //checkFlip = false;
             }
         }
-    }
+   // }
 
     @Override
     public void move() {
