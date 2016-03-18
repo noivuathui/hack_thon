@@ -48,43 +48,6 @@ public class FlashlightFish extends FishEnemyObject {
         }
     }
 
-    private  int xVelocity =  1 ;
-    private  int yVelocity =  1 ;
-
-    public  void setRandomDirection ()  {
-        double direction =  Math . random ()* 2.0 * Math . PI ;
-
-        xVelocity =  ( int )  ( speed * Math . sin ( direction ));
-        yVelocity =  ( int )  ( speed * Math . cos ( direction ));
-        if(xVelocity > 0){
-            animationNormal.setFlipX(1);
-            checkFlip = true;
-        } else {
-            animationNormal.setFlipX(-1);
-            checkFlip = true;
-        }
-    }
-    public void move() {
-        positionX += xVelocity ;
-        positionY += yVelocity ;  //added
-        if  ( positionX >= Define.RIGHT_WALL )  {
-            positionX = Define.RIGHT_WALL;
-            setRandomDirection ();
-        }
-        if  ( positionX <= Define.LEFT_WALL )  {
-            positionX = Define.LEFT_WALL ;
-            setRandomDirection ();
-        }
-        if  ( positionY >= Define.DOWN_WALL )  {
-            positionY = Define.DOWN_WALL;
-            setRandomDirection ();
-        }
-        if  ( positionY <= Define.UP_WALL )  {
-            positionY = Define.UP_WALL;
-            setRandomDirection ();
-        }
-    }
-
     public void update(){
         this.move();
     }
