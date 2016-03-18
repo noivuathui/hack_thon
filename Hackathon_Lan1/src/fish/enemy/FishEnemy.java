@@ -26,6 +26,7 @@ public class FishEnemy extends FishEnemyObject {
     private void initAnimation(){
         delta = 50;
         animationNormal = new Animation(Define.FISH_ENEMY_START,Define.FISH_ENEMY_END,delta);
+        animationNormal.setFlipX(-1);
         animationFlip = new Animation(Define.FISH_ENEMY_FLIP_START,Define.FISH_ENEMY_FLIP_END,delta);
     }
 
@@ -46,6 +47,11 @@ public class FishEnemy extends FishEnemyObject {
 //        }
     }
 
+    @Override
+    public void move() {
+        super.move();
+    }
+
     public boolean checkCollision() {
         Rectangle rectEnemy = new Rectangle(positionX, positionY, sprite.getWidth(), sprite.getHeight());
 
@@ -59,6 +65,9 @@ public class FishEnemy extends FishEnemyObject {
 
     public void update(){
         this.move();
+//        if(checkCollision()){
+//            PlayerManager.getInstance().getPlayer();
+//        }
     }
     @Override
     public int getWidth() {

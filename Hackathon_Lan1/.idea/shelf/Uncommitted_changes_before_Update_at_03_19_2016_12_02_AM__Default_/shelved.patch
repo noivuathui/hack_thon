@@ -1,0 +1,929 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(date 1458318321000)
++++ .idea/workspace.xml	(revision )
+@@ -2,42 +2,12 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="bc83fdd2-e15c-4be8-8ed7-f3cf3abfd603" name="Default" comment="">
+-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fish/object/FishEnemyObject.java" />
+-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fish/object/FishPlayerObject.java" />
+-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphics/GamePlayScene.java" />
+-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphics/MenuScene.java" />
+-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphics/ScoreScene.java" />
+-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/Define.class" afterPath="" />
+-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/FishCaDoc.class" afterPath="" />
+-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/FishEnemy.class" afterPath="" />
+-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/FishEnemySmall.class" afterPath="" />
+-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/FishObject.class" afterPath="" />
+-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/JellyFish.class" afterPath="" />
+-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/Player.class" afterPath="" />
+-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/fish/Define.java" afterPath="$PROJECT_DIR$/src/fish/define/Define.java" />
+-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/fish/FishCaDoc.java" afterPath="$PROJECT_DIR$/src/fish/enemy/FishCaDoc.java" />
+-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/fish/FishEnemy.java" afterPath="$PROJECT_DIR$/src/fish/enemy/FishEnemy.java" />
+-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/fish/FishEnemySmall.java" afterPath="$PROJECT_DIR$/src/fish/enemy/FishEnemySmall.java" />
+-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/fish/FishObject.java" afterPath="$PROJECT_DIR$/src/fish/object/FishObject.java" />
+-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/fish/FlashlightFish.java" afterPath="$PROJECT_DIR$/src/fish/enemy/FlashlightFish.java" />
+-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/fish/JellyFish.java" afterPath="$PROJECT_DIR$/src/fish/enemy/JellyFish.java" />
+-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/fish/Player.java" afterPath="$PROJECT_DIR$/src/fish/player/Player.java" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/graphics/Animation.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/graphics/Animation.class" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/graphics/Topic.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/graphics/Topic.class" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/main/GameWindow$1.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/main/GameWindow$1.class" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/main/GameWindow$2.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/main/GameWindow$2.class" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/main/GameWindow.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/main/GameWindow.class" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/singleton/FishEnemyManager.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/singleton/FishEnemyManager.class" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/singleton/GameManager.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/singleton/GameManager.class" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/singleton/PlayerManager.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/singleton/PlayerManager.class" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphics/Animation.java" afterPath="$PROJECT_DIR$/src/graphics/Animation.java" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphics/Scene.java" afterPath="$PROJECT_DIR$/src/graphics/Scene.java" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphics/Topic.java" afterPath="$PROJECT_DIR$/src/graphics/Topic.java" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/enemy/FishEnemy.java" afterPath="$PROJECT_DIR$/src/fish/enemy/FishEnemy.java" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/enemy/FishEnemySmall.java" afterPath="$PROJECT_DIR$/src/fish/enemy/FishEnemySmall.java" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/object/FishEnemyObject.java" afterPath="$PROJECT_DIR$/src/fish/object/FishEnemyObject.java" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/player/Player.java" afterPath="$PROJECT_DIR$/src/fish/player/Player.java" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/GameWindow.java" afterPath="$PROJECT_DIR$/src/main/GameWindow.java" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/singleton/FishEnemyManager.java" afterPath="$PROJECT_DIR$/src/singleton/FishEnemyManager.java" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/singleton/GameManager.java" afterPath="$PROJECT_DIR$/src/singleton/GameManager.java" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/singleton/PlayerManager.java" afterPath="$PROJECT_DIR$/src/singleton/PlayerManager.java" />
+     </list>
+     <ignored path="Hackathon_Lan1.iws" />
+     <ignored path=".idea/workspace.xml" />
+@@ -62,9 +32,12 @@
+       <file leaf-file-name="FishEnemy.java" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/src/fish/enemy/FishEnemy.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="52">
+-              <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+-              <folding />
++            <state relative-caret-position="444">
++              <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
++              <folding>
++                <element signature="e#2555#2556#0" expanded="true" />
++                <element signature="e#2582#2583#0" expanded="true" />
++              </folding>
+             </state>
+           </provider>
+         </entry>
+@@ -72,29 +45,32 @@
+       <file leaf-file-name="FishEnemySmall.java" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/src/fish/enemy/FishEnemySmall.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="108">
+-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
++            <state relative-caret-position="325">
++              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+               <folding />
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="FishCaDoc.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/fish/enemy/FishCaDoc.java">
++      <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/main/GameWindow.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="-181">
+-              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
++            <state relative-caret-position="170">
++              <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+               <folding />
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/main/GameWindow.java">
++      <file leaf-file-name="PlayerManager.java" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/singleton/PlayerManager.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="-115">
+-              <caret line="116" column="9" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
+-              <folding />
++            <state relative-caret-position="289">
++              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
++              <folding>
++                <element signature="e#415#416#0" expanded="true" />
++                <element signature="e#444#445#0" expanded="true" />
++              </folding>
+             </state>
+           </provider>
+         </entry>
+@@ -112,13 +88,14 @@
+       <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+         <entry file="file://$PROJECT_DIR$/src/fish/player/Player.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="-850">
+-              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
++            <state relative-caret-position="227">
++              <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+               <folding>
+-                <element signature="e#4820#4821#0" expanded="true" />
+-                <element signature="e#4847#4848#0" expanded="true" />
+-                <element signature="e#4884#4885#0" expanded="true" />
+-                <element signature="e#4916#4917#0" expanded="true" />
++                <element signature="imports" expanded="true" />
++                <element signature="e#5089#5090#0" expanded="true" />
++                <element signature="e#5116#5117#0" expanded="true" />
++                <element signature="e#5164#5165#0" expanded="true" />
++                <element signature="e#5191#5192#0" expanded="true" />
+               </folding>
+             </state>
+           </provider>
+@@ -127,45 +104,39 @@
+       <file leaf-file-name="GameObject.java" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/src/main/GameObject.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="171">
++            <state relative-caret-position="425">
+               <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+               <folding />
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="FishPlayerObject.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/fish/object/FishPlayerObject.java">
++      <file leaf-file-name="Animation.java" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/graphics/Animation.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="23">
+-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+-              <folding>
+-                <element signature="e#439#440#0" expanded="true" />
+-                <element signature="e#489#490#0" expanded="true" />
+-              </folding>
++            <state relative-caret-position="799">
++              <caret line="90" column="2" selection-start-line="90" selection-start-column="2" selection-end-line="90" selection-end-column="2" />
++              <folding />
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="Define.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/fish/define/Define.java">
++      <file leaf-file-name="FishEnemyObject.java" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/fish/object/FishEnemyObject.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="85">
+-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
++            <state relative-caret-position="136">
++              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+               <folding />
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="FishEnemyObject.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/fish/object/FishEnemyObject.java">
++      <file leaf-file-name="FishPlayerObject.java" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/fish/object/FishPlayerObject.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="85">
+-              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+-              <folding>
+-                <element signature="e#201#202#0" expanded="true" />
+-                <element signature="e#251#252#0" expanded="true" />
+-              </folding>
++            <state relative-caret-position="154">
++              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
++              <folding />
+             </state>
+           </provider>
+         </entry>
+@@ -181,6 +152,7 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="UPDATE_CHANGES_POLICY" value="SHELVE" />
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+     <option name="PUSH_TAGS">
+       <GitPushTagMode />
+@@ -229,15 +201,16 @@
+         <option value="$PROJECT_DIR$/src/fish/FishCaDoc.java" />
+         <option value="$PROJECT_DIR$/src/fish/FishEnemy.java" />
+         <option value="$PROJECT_DIR$/src/fish/FishEnemySmall.java" />
+-        <option value="$PROJECT_DIR$/src/fish/object/FishEnemyObject.java" />
+         <option value="$PROJECT_DIR$/src/fish/enemy/FishCaDoc.java" />
+         <option value="$PROJECT_DIR$/src/fish/enemy/FlashlightFish.java" />
+         <option value="$PROJECT_DIR$/src/fish/enemy/JellyFish.java" />
+         <option value="$PROJECT_DIR$/src/fish/define/Define.java" />
+-        <option value="$PROJECT_DIR$/src/fish/object/FishPlayerObject.java" />
+         <option value="$PROJECT_DIR$/src/fish/object/FishObject.java" />
+-        <option value="$PROJECT_DIR$/src/main/GameWindow.java" />
++        <option value="$PROJECT_DIR$/src/fish/object/FishPlayerObject.java" />
+         <option value="$PROJECT_DIR$/src/fish/enemy/FishEnemy.java" />
++        <option value="$PROJECT_DIR$/src/main/GameWindow.java" />
++        <option value="$PROJECT_DIR$/src/fish/enemy/FishEnemySmall.java" />
++        <option value="$PROJECT_DIR$/src/fish/object/FishEnemyObject.java" />
+         <option value="$PROJECT_DIR$/src/fish/player/Player.java" />
+       </list>
+     </option>
+@@ -272,6 +245,8 @@
+       <foldersAlwaysOnTop value="true" />
+     </navigator>
+     <panes>
++      <pane id="Scratches" />
++      <pane id="PackagesPane" />
+       <pane id="ProjectPane">
+         <subPane>
+           <PATH>
+@@ -303,10 +278,6 @@
+               <option name="myItemId" value="src" />
+               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+             </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="sound" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+           </PATH>
+           <PATH>
+             <PATH_ELEMENT>
+@@ -322,78 +293,6 @@
+               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+             </PATH_ELEMENT>
+             <PATH_ELEMENT>
+-              <option name="myItemId" value="singleton" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-          </PATH>
+-          <PATH>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="Hackathon_Lan1" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="Hackathon_Lan1" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="src" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="Plant" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-          </PATH>
+-          <PATH>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="Hackathon_Lan1" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="Hackathon_Lan1" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="src" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="main" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-          </PATH>
+-          <PATH>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="Hackathon_Lan1" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="Hackathon_Lan1" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="src" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="graphics" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-          </PATH>
+-          <PATH>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="Hackathon_Lan1" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="Hackathon_Lan1" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="src" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+               <option name="myItemId" value="fish" />
+               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+             </PATH_ELEMENT>
+@@ -464,25 +363,9 @@
+               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+             </PATH_ELEMENT>
+           </PATH>
+-          <PATH>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="Hackathon_Lan1" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="Hackathon_Lan1" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-            <PATH_ELEMENT>
+-              <option name="myItemId" value="Sounds" />
+-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+-            </PATH_ELEMENT>
+-          </PATH>
+         </subPane>
+       </pane>
+-      <pane id="Scratches" />
+       <pane id="Scope" />
+-      <pane id="PackagesPane" />
+     </panes>
+   </component>
+   <component name="PropertiesComponent">
+@@ -971,7 +854,7 @@
+   </component>
+   <component name="ToolWindowManager">
+     <frame x="-8" y="0" width="1374" height="735" extended-state="0" />
+-    <editor active="true" />
++    <editor active="false" />
+     <layout>
+       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+@@ -998,6 +881,32 @@
+       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+     </layout>
++    <layout-to-restore>
++      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
++      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
++      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
++      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
++      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
++      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
++      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
++      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
++      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
++      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
++      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
++      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
++      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
++      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
++      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
++      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
++      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20176731" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
++      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
++      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
++      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
++      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
++      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
++      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
++      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
++    </layout-to-restore>
+   </component>
+   <component name="Vcs.Log.UiProperties">
+     <option name="RECENTLY_FILTERED_USER_GROUPS">
+@@ -1027,7 +936,7 @@
+         </line-breakpoint>
+         <line-breakpoint enabled="true" type="java-line">
+           <url>file://$PROJECT_DIR$/src/fish/enemy/FishEnemySmall.java</url>
+-          <line>78</line>
++          <line>44</line>
+           <properties />
+           <option name="timeStamp" value="6" />
+         </line-breakpoint>
+@@ -1045,10 +954,7 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="0">
+           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+-          <folding>
+-            <element signature="e#1966#1967#0" expanded="true" />
+-            <element signature="e#2000#2001#0" expanded="true" />
+-          </folding>
++          <folding />
+         </state>
+       </provider>
+     </entry>
+@@ -1057,8 +963,8 @@
+         <state relative-caret-position="0">
+           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+           <folding>
+-            <element signature="e#336#337#0" expanded="true" />
+-            <element signature="e#382#383#0" expanded="true" />
++            <element signature="e#415#416#0" expanded="true" />
++            <element signature="e#444#445#0" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+@@ -1100,10 +1006,11 @@
+         <state relative-caret-position="0">
+           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+           <folding>
+-            <element signature="e#4820#4821#0" expanded="true" />
+-            <element signature="e#4847#4848#0" expanded="true" />
+-            <element signature="e#4884#4885#0" expanded="true" />
+-            <element signature="e#4916#4917#0" expanded="true" />
++            <element signature="imports" expanded="true" />
++            <element signature="e#5089#5090#0" expanded="true" />
++            <element signature="e#5116#5117#0" expanded="true" />
++            <element signature="e#5164#5165#0" expanded="true" />
++            <element signature="e#5191#5192#0" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+@@ -1112,10 +1019,7 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="0">
+           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+-          <folding>
+-            <element signature="e#1966#1967#0" expanded="true" />
+-            <element signature="e#2000#2001#0" expanded="true" />
+-          </folding>
++          <folding />
+         </state>
+       </provider>
+     </entry>
+@@ -1124,8 +1028,8 @@
+         <state relative-caret-position="0">
+           <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+           <folding>
+-            <element signature="e#336#337#0" expanded="true" />
+-            <element signature="e#382#383#0" expanded="true" />
++            <element signature="e#415#416#0" expanded="true" />
++            <element signature="e#444#445#0" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+@@ -1167,10 +1071,11 @@
+         <state relative-caret-position="0">
+           <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+           <folding>
+-            <element signature="e#4820#4821#0" expanded="true" />
+-            <element signature="e#4847#4848#0" expanded="true" />
+-            <element signature="e#4884#4885#0" expanded="true" />
+-            <element signature="e#4916#4917#0" expanded="true" />
++            <element signature="imports" expanded="true" />
++            <element signature="e#5089#5090#0" expanded="true" />
++            <element signature="e#5116#5117#0" expanded="true" />
++            <element signature="e#5164#5165#0" expanded="true" />
++            <element signature="e#5191#5192#0" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+@@ -1180,8 +1085,8 @@
+         <state relative-caret-position="0">
+           <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+           <folding>
+-            <element signature="e#336#337#0" expanded="true" />
+-            <element signature="e#382#383#0" expanded="true" />
++            <element signature="e#415#416#0" expanded="true" />
++            <element signature="e#444#445#0" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+@@ -1190,10 +1095,7 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="0">
+           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+-          <folding>
+-            <element signature="e#1966#1967#0" expanded="true" />
+-            <element signature="e#2000#2001#0" expanded="true" />
+-          </folding>
++          <folding />
+         </state>
+       </provider>
+     </entry>
+@@ -1234,10 +1136,11 @@
+         <state relative-caret-position="0">
+           <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+           <folding>
+-            <element signature="e#4820#4821#0" expanded="true" />
+-            <element signature="e#4847#4848#0" expanded="true" />
+-            <element signature="e#4884#4885#0" expanded="true" />
+-            <element signature="e#4916#4917#0" expanded="true" />
++            <element signature="imports" expanded="true" />
++            <element signature="e#5089#5090#0" expanded="true" />
++            <element signature="e#5116#5117#0" expanded="true" />
++            <element signature="e#5164#5165#0" expanded="true" />
++            <element signature="e#5191#5192#0" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+@@ -1303,8 +1206,6 @@
+           <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+           <folding>
+             <element signature="imports" expanded="false" />
+-            <element signature="e#1607#1608#0" expanded="false" />
+-            <element signature="e#1667#1668#0" expanded="false" />
+           </folding>
+         </state>
+       </provider>
+@@ -1327,28 +1228,6 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/graphics/Animation.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="289">
+-          <caret line="90" column="2" selection-start-line="90" selection-start-column="2" selection-end-line="90" selection-end-column="2" />
+-          <folding>
+-            <element signature="e#1966#1967#0" expanded="true" />
+-            <element signature="e#2000#2001#0" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/src/singleton/PlayerManager.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="190">
+-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+-          <folding>
+-            <element signature="e#336#337#0" expanded="true" />
+-            <element signature="e#382#383#0" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/src/graphics/Topic.java">
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="119">
+@@ -1386,7 +1265,7 @@
+         <state relative-caret-position="-201">
+           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+           <folding>
+-            <element signature="imports" expanded="true" />
++            <element signature="imports" expanded="false" />
+           </folding>
+         </state>
+       </provider>
+@@ -1415,85 +1294,116 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/fish/object/FishEnemyObject.java">
++    <entry file="file://$PROJECT_DIR$/src/fish/enemy/FishCaDoc.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="85">
+-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
++        <state relative-caret-position="187">
++          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+           <folding>
+-            <element signature="e#201#202#0" expanded="true" />
+-            <element signature="e#251#252#0" expanded="true" />
++            <element signature="imports" expanded="false" />
++            <element signature="e#2420#2421#0" expanded="false" />
++            <element signature="e#2447#2448#0" expanded="false" />
++            <element signature="e#2476#2477#0" expanded="false" />
++            <element signature="e#2525#2526#0" expanded="false" />
++            <element signature="e#2555#2556#0" expanded="false" />
++            <element signature="e#2605#2606#0" expanded="false" />
++            <element signature="e#2664#2665#0" expanded="false" />
++            <element signature="e#2702#2703#0" expanded="false" />
++            <element signature="e#2759#2760#0" expanded="false" />
++            <element signature="e#2795#2796#0" expanded="false" />
++            <element signature="e#2851#2852#0" expanded="false" />
++            <element signature="e#2878#2879#0" expanded="false" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/fish/enemy/FishCaDoc.java">
++    <entry file="file://$PROJECT_DIR$/src/main/GameObject.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="-181">
+-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
++        <state relative-caret-position="425">
++          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/fish/enemy/FishEnemySmall.java">
++    <entry file="file://$PROJECT_DIR$/src/fish/object/FishObject.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="108">
+-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
++        <state relative-caret-position="238">
++          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/main/GameObject.java">
++    <entry file="file://$PROJECT_DIR$/src/singleton/PlayerManager.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="171">
+-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
++        <state relative-caret-position="289">
++          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
++          <folding>
++            <element signature="e#415#416#0" expanded="true" />
++            <element signature="e#444#445#0" expanded="true" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/graphics/Animation.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="799">
++          <caret line="90" column="2" selection-start-line="90" selection-start-column="2" selection-end-line="90" selection-end-column="2" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/main/GameWindow.java">
++    <entry file="file://$PROJECT_DIR$/src/fish/object/FishPlayerObject.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="-115">
+-          <caret line="116" column="9" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
++        <state relative-caret-position="154">
++          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+     <entry file="file://$PROJECT_DIR$/src/fish/enemy/FishEnemy.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="52">
+-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
++        <state relative-caret-position="444">
++          <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
++          <folding>
++            <element signature="e#2555#2556#0" expanded="true" />
++            <element signature="e#2582#2583#0" expanded="true" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/GameWindow.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="170">
++          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/fish/object/FishObject.java">
++    <entry file="file://$PROJECT_DIR$/src/fish/enemy/FishEnemySmall.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="238">
+-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
++        <state relative-caret-position="325">
++          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/fish/object/FishPlayerObject.java">
++    <entry file="file://$PROJECT_DIR$/src/fish/object/FishEnemyObject.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="23">
+-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+-          <folding>
+-            <element signature="e#439#440#0" expanded="true" />
+-            <element signature="e#489#490#0" expanded="true" />
+-          </folding>
++        <state relative-caret-position="136">
++          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
++          <folding />
+         </state>
+       </provider>
+     </entry>
+     <entry file="file://$PROJECT_DIR$/src/fish/player/Player.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="-850">
+-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
++        <state relative-caret-position="227">
++          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+           <folding>
+-            <element signature="e#4820#4821#0" expanded="true" />
+-            <element signature="e#4847#4848#0" expanded="true" />
+-            <element signature="e#4884#4885#0" expanded="true" />
+-            <element signature="e#4916#4917#0" expanded="true" />
++            <element signature="imports" expanded="true" />
++            <element signature="e#5089#5090#0" expanded="true" />
++            <element signature="e#5116#5117#0" expanded="true" />
++            <element signature="e#5164#5165#0" expanded="true" />
++            <element signature="e#5191#5192#0" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+\ No newline at end of file
+Index: src/main/GameWindow.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/GameWindow.java	(date 1458318321000)
++++ src/main/GameWindow.java	(revision )
+@@ -6,6 +6,7 @@
+ import fish.enemy.FlashlightFish;
+ import fish.enemy.JellyFish;
+ import fish.object.FishObject;
++import graphics.Animation;
+ import graphics.MenuScene;
+ import graphics.Topic;
+ import singleton.FishEnemyManager;
+@@ -114,7 +115,6 @@
+             coral.draw(g);
+         }
+         PlayerManager.getInstance().getPlayer().draw(g);
+-       // GameManager.getInstance().getStackMenuGame().peek().draw(g);
+     }
+ 
+     @Override
+Index: src/fish/player/Player.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/fish/player/Player.java	(date 1458318321000)
++++ src/fish/player/Player.java	(revision )
+@@ -14,6 +14,7 @@
+  * Created by VinhNguyenDinh on 03/13/2016.
+  */
+ public class Player extends FishPlayerObject {
++    protected static boolean Lose = false;
+ 
+     private void initAnimation() {
+         if(level == 1) {
+@@ -69,7 +70,7 @@
+         }
+         if(checkCollisionEnemy()){
+             diem += 5;
+-            g.drawString("diem cua ban la : "+diem,300,50);
++            g.drawString("diem cua ban la : " + diem, 300, 50);
+         }
+     }
+ 
+@@ -92,7 +93,6 @@
+         this.move(this.positionX, this.positionY);
+         if(checkCollisionEnemy()) {
+             checkEat = true;
+-            //diem +=5;
+             Music.music("sound2");
+         }
+         oldX = positionX;
+@@ -112,8 +112,8 @@
+                     return true;
+                 }
+                 else {
+-                    //System.out.println("Ca dich an player roi");
+-//
++
++
+                     return false;
+                 }
+             }
+@@ -160,5 +160,13 @@
+ 
+     public void setOldY(int oldY) {
+         this.oldY = oldY;
++    }
++
++    public static boolean isLose() {
++        return Lose;
++    }
++
++    public static void setLose(boolean lose) {
++        Lose = lose;
+     }
+ }
+Index: src/fish/object/FishEnemyObject.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/fish/object/FishEnemyObject.java	(date 1458318321000)
++++ src/fish/object/FishEnemyObject.java	(revision )
+@@ -1,5 +1,7 @@
+ package fish.object;
+ 
++import fish.define.Define;
++
+ /**
+  * Created by VinhNguyenDinh on 03/18/2016.
+  */
+@@ -7,5 +9,4 @@
+     public FishEnemyObject(int positionX, int positionY, int speed) {
+         super(positionX, positionY, speed);
+     }
+-
+ }
+Index: src/fish/enemy/FishEnemySmall.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/fish/enemy/FishEnemySmall.java	(date 1458318321000)
++++ src/fish/enemy/FishEnemySmall.java	(revision )
+@@ -40,40 +40,6 @@
+         }
+     }
+ 
+-    //ham move()
+-    private int xVelocity =  1 ;
+-    private int yVelocity =  1 ;
+-    public  void setRandomDirection ()  {
+-        double direction =  Math . random ()* 3.0 * Math . PI ;
+-        xVelocity =  ( int )  ( speed * Math . cos ( direction ));
+-        yVelocity =  ( int )  ( speed * Math . sin ( direction ));
+-        if(xVelocity > 0){
+-            animationNormal.setFlipX(-1);
+-        } else {
+-            animationNormal.setFlipX(1);
+-        }
+-    }
+-
+-    public void move() {
+-        positionX += xVelocity;
+-        positionY += yVelocity;
+-        if  ( positionX >= Define.RIGHT_WALL )  {
+-            positionX = Define.RIGHT_WALL ;
+-            setRandomDirection ();
+-        }
+-        if  ( positionX <= Define.LEFT_WALL )  {
+-            positionX = Define.LEFT_WALL ;
+-            setRandomDirection ();
+-        }
+-        if  ( positionY >= Define.DOWN_WALL )  {
+-            positionY = Define.DOWN_WALL ;
+-            setRandomDirection ();
+-        }
+-        if  ( positionY <= Define.UP_WALL )  {
+-            positionY = Define.UP_WALL ;
+-            setRandomDirection ();
+-        }
+-    }
+ 
+     public void update(){
+         this.move();
+Index: src/fish/enemy/FishEnemy.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/fish/enemy/FishEnemy.java	(date 1458318321000)
++++ src/fish/enemy/FishEnemy.java	(revision )
+@@ -31,20 +31,20 @@
+ 
+     private int count = 0;
+     public void draw(Graphics g) {
+-       // if(check) {
++        if(check) {
+             animationNormal.draw(g, getPositionX() + GameManager.getInstance().getLocationX(),
+                     getPositionY() + GameManager.getInstance().getLocationY());
+-//        }
+-//        else {
+-//            animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
+-//                    , positionY + GameManager.getInstance().getLocationY());
+-//            count++;
+-//            if(count > 20) {
+-//                count = 0;
+-//                check = true;
+-//            }
+-//        }
+-    }
++        }
++        else {
++            animationFlip.draw(g, positionX + GameManager.getInstance().getLocationX()
++                    , positionY + GameManager.getInstance().getLocationY());
++            count++;
++            if(count > 20) {
++                count = 0;
++                check = true;
++            }
++        }
++    }
+ 
+     //ham move()
+     private int xVelocity =  1 ;
+@@ -81,22 +81,8 @@
+         }
+     }
+ 
+-    public boolean checkCollision() {
+-        Rectangle rectEnemy = new Rectangle(positionX, positionY, sprite.getWidth(), sprite.getHeight());
+-
+-        Rectangle rectPlay =
+-                new Rectangle(PlayerManager.getInstance().getPlayer().getPositionX()
+-                        , PlayerManager.getInstance().getPlayer().getPositionY()
+-                        , PlayerManager.getInstance().getPlayer().getWidth()
+-                        , PlayerManager.getInstance().getPlayer().getHeight());
+-        return rectEnemy.intersects(rectPlay);
+-    }
+-
+     public void update(){
+         this.move();
+-//        if(checkCollision()){
+-//            PlayerManager.getInstance().getPlayer();
+-//        }
+     }
+     @Override
+     public int getWidth() {

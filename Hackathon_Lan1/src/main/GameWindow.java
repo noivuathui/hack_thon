@@ -7,6 +7,7 @@ import fish.enemy.FishEnemySmall;
 import fish.enemy.FlashlightFish;
 import fish.enemy.JellyFish;
 import fish.object.FishObject;
+import graphics.Animation;
 import graphics.MenuScene;
 import graphics.Topic;
 import singleton.FishEnemyManager;
@@ -119,7 +120,6 @@ public class GameWindow extends Frame implements Runnable {
             coral.draw(g);
         }
         PlayerManager.getInstance().getPlayer().draw(g);
-       // GameManager.getInstance().getStackMenuGame().peek().draw(g);
     }
 
     @Override

@@ -20,6 +20,7 @@ public class FishEnemySmall extends FishEnemyObject {
 
     private void initAnimation(){
         animationNormal = new Animation(Define.FISH_ENEMY_SMALL_START,Define.FISH_ENEMY_SMALL_END,50);
+        animationNormal.setFlipX(-1);
         animationFlip = new Animation(Define.FISH_ENEMY_SMALL_FLIP_START,Define.FISH_ENEMY_SMALL_FLIP_END,50);
     }
 
@@ -39,6 +40,8 @@ public class FishEnemySmall extends FishEnemyObject {
             }
         }
     }
+
+
 
     public void update(){
         this.move();

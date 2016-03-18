@@ -14,7 +14,7 @@ public class Define {
 
     // Level 2
     public static final int FISH_LEVEL2_START = 257;
-    public static final int FISH_LEVEL2_END = 285;
+    public static final int FISH_LEVEL2_END = 277;
     public static final int FISH_LEVEL2_FLIP_START = 288;
     public static final int FISH_LEVEL2_FLIP_END = 296;
     public static final int FISH_LEVEL2_EAT_START = 299;

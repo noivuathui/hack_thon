@@ -14,6 +14,7 @@ import java.awt.*;
  * Created by VinhNguyenDinh on 03/13/2016.
  */
 public class Player extends FishPlayerObject {
+    protected static boolean Lose = false;
 
     private void initAnimation() {
         if(level == 1) {
@@ -46,7 +47,7 @@ public class Player extends FishPlayerObject {
     public Player(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
         this.direction = 1;
-        this.level = 2;
+        this.level = 1;
         this.health = 100;
         initAnimation();
     }
@@ -55,7 +56,7 @@ public class Player extends FishPlayerObject {
 
     public void draw(Graphics g) {
         if(checkEat == false) {
-            animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()
+            animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()+animationNormal.getWidth()/2
                     , positionY + GameManager.getInstance().getLocationY());
         }
         else  {
@@ -69,7 +70,7 @@ public class Player extends FishPlayerObject {
         }
         if(checkCollisionEnemy()){
             diem += 5;
-            g.drawString("diem cua ban la : "+diem,300,50);
+            g.drawString("diem cua ban la : " + diem, 300, 50);
         }
     }
 
@@ -78,21 +79,26 @@ public class Player extends FishPlayerObject {
     public void move(int positionX, int positionY) {
         this.positionX = positionX;
         this.positionY = positionY;
-        if(positionX > oldX + 10) {
+        if(positionX > oldX) {
             animationNormal.setFlipX(-1);
         }
-        else if(positionX < oldX - 10){
+        else if(positionX < oldX){
             animationNormal.setFlipX(1);
         }
     }
 
     public int diem = 0;
+    public int eat = 0;
     public void update() {
         super.update();
         this.move(this.positionX, this.positionY);
         if(checkCollisionEnemy()) {
+            eat++;
+            if(eat <=4){
+                eat = 0;
+                level++;
+            }
             checkEat = true;
-            //diem +=5;
             Music.music("sound2");
         }
         oldX = positionX;
@@ -112,8 +118,8 @@ public class Player extends FishPlayerObject {
                     return true;
                 }
                 else {
-                    //System.out.println("Ca dich an player roi");
-//
+
+
                     return false;
                 }
             }
@@ -160,5 +166,13 @@ public class Player extends FishPlayerObject {
 
     public void setOldY(int oldY) {
         this.oldY = oldY;
+    }
+
+    public static boolean isLose() {
+        return Lose;
+    }
+
+    public static void setLose(boolean lose) {
+        Lose = lose;
     }
 }

@@ -18,6 +18,7 @@ public class FlashlightFish extends FishEnemyObject {
 
     private void initAnimation(){
         animationNormal = new Animation(Define.FLASH_LIGHT_FISH_START, Define.FLASH_LIGHT_FISH_END, 50);
+        animationNormal.setFlipX(-1);
         animationFlip = new Animation(Define.FLASH_LIGHT_FISH_FLIP_START, Define.FLASH_LIGHT_FISH_FLIP_END, 50);
         animationEat = new Animation(Define.FLASH_LIGHT_FISH_EAT_START, Define.FLASH_LIGHT_FISH_EAT_END, 50);
     }
@@ -46,6 +47,11 @@ public class FlashlightFish extends FishEnemyObject {
                     checkFlip = false;
             }
         }
+    }
+
+    @Override
+    public void move() {
+        super.move();
     }
 
     public void update(){
