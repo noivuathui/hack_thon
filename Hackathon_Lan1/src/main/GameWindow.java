@@ -106,16 +106,22 @@ public class GameWindow extends Frame implements Runnable {
         g.drawImage(image,0,0,null);
     }
 
+
+    private int temp = 300;
+
     @Override
     public void paint(Graphics g) {
         g.drawImage(background,0,0,null);
-        for(FishObject fishObject : vectorFishObject) {
-            fishObject.draw(g);
+        if(PlayerManager.getInstance().getPlayer().isLose() == false) {
+            for(FishObject fishObject : vectorFishObject) {
+                fishObject.draw(g);
+            }
+            for(Coral coral : coralVector){
+                coral.draw(g);
+            }
+            PlayerManager.getInstance().getPlayer().draw(g);
         }
-        for(Coral coral : coralVector){
-            coral.draw(g);
-        }
-        PlayerManager.getInstance().getPlayer().draw(g);
+        g.drawString("GAME OVER", 300, 400);
     }
 
     @Override

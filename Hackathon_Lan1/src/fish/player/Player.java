@@ -14,7 +14,7 @@ import java.awt.*;
  * Created by VinhNguyenDinh on 03/13/2016.
  */
 public class Player extends FishPlayerObject {
-    protected static boolean Lose = false;
+    private static boolean Lose = false;
     private int dir; //1 quay tra 2 quay phai
 
 
@@ -121,7 +121,7 @@ public class Player extends FishPlayerObject {
                 level++;
             }
             checkEat = true;
-            Music.music("sound2");
+            //Music.music("sound2");
         }
         if(checkFlip()){
             checkFlip = true;
@@ -140,14 +140,12 @@ public class Player extends FishPlayerObject {
             Rectangle rectFishObject = new Rectangle(fishObject.getPositionX(), fishObject.getPositionY(), fishObject.getWidth(), fishObject.getHeight());
             s2 = fishObject.getWidth() * fishObject.getHeight();
             if(rectPlayer.intersects(rectFishObject)&& !(fishObject instanceof JellyFish)) {
-                if (s1 >= s2 ) {
-                    //System.out.println("awn roi ne");
-                    FishEnemyManager.getInstance().getVectorFishObject().remove(FishEnemyManager.getInstance().getVectorFishObject().indexOf(fishObject));
+                if (s1 > s2 ) {
+                    FishEnemyManager.getInstance().getVectorFishObject().remove(fishObject);
                     return true;
                 }
-                else {
-
-
+                else if(s2 > s1){
+                    Lose = true;
                     return false;
                 }
             }

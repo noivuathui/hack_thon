@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc83fdd2-e15c-4be8-8ed7-f3cf3abfd603" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/define/Define.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/define/Define.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/enemy/FishCaDoc.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/enemy/FishCaDoc.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/enemy/FishEnemy.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/enemy/FishEnemy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/enemy/FishEnemySmall.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/enemy/FishEnemySmall.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/enemy/FlashlightFish.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/enemy/FlashlightFish.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/object/FishEnemyObject.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/object/FishEnemyObject.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/player/Player.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/fish/player/Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/graphics/Animation.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/graphics/Animation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hackathon_Lan1/main/GameWindow.class" afterPath="$PROJECT_DIR$/out/production/Hackathon_Lan1/main/GameWindow.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/define/Define.java" afterPath="$PROJECT_DIR$/src/fish/define/Define.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/enemy/FishCaDoc.java" afterPath="$PROJECT_DIR$/src/fish/enemy/FishCaDoc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/enemy/FishEnemy.java" afterPath="$PROJECT_DIR$/src/fish/enemy/FishEnemy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/enemy/FishEnemySmall.java" afterPath="$PROJECT_DIR$/src/fish/enemy/FishEnemySmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/enemy/FlashlightFish.java" afterPath="$PROJECT_DIR$/src/fish/enemy/FlashlightFish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/object/FishEnemyObject.java" afterPath="$PROJECT_DIR$/src/fish/object/FishEnemyObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fish/player/Player.java" afterPath="$PROJECT_DIR$/src/fish/player/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphics/Animation.java" afterPath="$PROJECT_DIR$/src/graphics/Animation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/GameWindow.java" afterPath="$PROJECT_DIR$/src/main/GameWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/singleton/PlayerManager.java" afterPath="$PROJECT_DIR$/src/singleton/PlayerManager.java" />
     </list>
     <ignored path="Hackathon_Lan1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fish/player/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+            <state relative-caret-position="204">
+              <caret line="147" column="32" selection-start-line="147" selection-start-column="32" selection-end-line="147" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -66,16 +59,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="302">
               <caret line="38" column="53" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -94,25 +77,28 @@
       <file leaf-file-name="PlayerManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/singleton/PlayerManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding>
-                <element signature="e#336#337#0" expanded="true" />
-                <element signature="e#382#383#0" expanded="true" />
-                <element signature="e#415#416#0" expanded="true" />
-                <element signature="e#444#445#0" expanded="true" />
-                <element signature="e#488#489#0" expanded="true" />
-                <element signature="e#524#525#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/GameWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="34" column="19" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="19" />
+            <state relative-caret-position="373">
+              <caret line="122" column="9" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Animation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/graphics/Animation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-102">
+              <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -130,16 +116,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FishCaDoc.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fish/enemy/FishCaDoc.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FishEnemyManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/singleton/FishEnemyManager.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -147,6 +123,28 @@
               <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FishCaDoc.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fish/enemy/FishCaDoc.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#689#690#0" expanded="false" />
+                <element signature="e#738#739#0" expanded="false" />
+                <element signature="e#768#769#0" expanded="false" />
+                <element signature="e#818#819#0" expanded="false" />
+                <element signature="e#877#878#0" expanded="false" />
+                <element signature="e#915#916#0" expanded="false" />
+                <element signature="e#972#973#0" expanded="false" />
+                <element signature="e#1008#1009#0" expanded="false" />
+                <element signature="e#1064#1065#0" expanded="false" />
+                <element signature="e#1091#1092#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -197,7 +195,6 @@
         <option value="$PROJECT_DIR$/src/fish/FlashlightFish.java" />
         <option value="$PROJECT_DIR$/src/fish/Define.java" />
         <option value="$PROJECT_DIR$/src/graphics/ScoreScene.java" />
-        <option value="$PROJECT_DIR$/src/graphics/Animation.java" />
         <option value="$PROJECT_DIR$/src/fish/FishObject.java" />
         <option value="$PROJECT_DIR$/src/graphics/Topic.java" />
         <option value="$PROJECT_DIR$/src/graphics/Scene.java" />
@@ -213,16 +210,17 @@
         <option value="$PROJECT_DIR$/src/fish/enemy/JellyFish.java" />
         <option value="$PROJECT_DIR$/src/fish/enemy/FlashlightFish.java" />
         <option value="$PROJECT_DIR$/src/fish/enemy/FishEnemySmall.java" />
-        <option value="$PROJECT_DIR$/src/singleton/PlayerManager.java" />
         <option value="$PROJECT_DIR$/src/fish/object/FishObject.java" />
         <option value="$PROJECT_DIR$/src/singleton/GameManager.java" />
         <option value="$PROJECT_DIR$/src/fish/object/FishPlayerObject.java" />
         <option value="$PROJECT_DIR$/src/singleton/FishEnemyManager.java" />
         <option value="$PROJECT_DIR$/src/fish/object/FishEnemyObject.java" />
-        <option value="$PROJECT_DIR$/src/main/GameWindow.java" />
         <option value="$PROJECT_DIR$/src/fish/define/Define.java" />
         <option value="$PROJECT_DIR$/src/fish/enemy/FishEnemy.java" />
+        <option value="$PROJECT_DIR$/src/graphics/Animation.java" />
+        <option value="$PROJECT_DIR$/src/singleton/PlayerManager.java" />
         <option value="$PROJECT_DIR$/src/fish/player/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/GameWindow.java" />
       </list>
     </option>
   </component>
@@ -403,32 +401,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="fish" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="enemy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hackathon_Lan1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hackathon_Lan1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fish" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="define" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -926,7 +898,14 @@
       <option name="project" value="LOCAL" />
       <updated>1458330663259</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="update">
+      <created>1458333111628</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1458333111628</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -950,7 +929,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39905363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1047,10 +1026,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#1966#1967#0" expanded="false" />
-            <element signature="e#2000#2001#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1058,14 +1034,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#415#416#0" expanded="true" />
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1112,10 +1081,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#1966#1967#0" expanded="false" />
-            <element signature="e#2000#2001#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1123,14 +1089,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#415#416#0" expanded="true" />
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1177,14 +1136,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-          <folding>
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#415#416#0" expanded="true" />
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1192,10 +1144,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#1966#1967#0" expanded="false" />
-            <element signature="e#2000#2001#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1260,17 +1209,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphics/Animation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="90" column="2" selection-start-line="90" selection-start-column="2" selection-end-line="90" selection-end-column="2" />
-          <folding>
-            <element signature="e#1966#1967#0" expanded="false" />
-            <element signature="e#2000#2001#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/graphics/Topic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1330,44 +1268,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/singleton/FishEnemyManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/GameWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/singleton/PlayerManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#415#416#0" expanded="true" />
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1383,7 +1288,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#689#690#0" expanded="false" />
+            <element signature="e#738#739#0" expanded="false" />
+            <element signature="e#768#769#0" expanded="false" />
+            <element signature="e#818#819#0" expanded="false" />
+            <element signature="e#877#878#0" expanded="false" />
+            <element signature="e#915#916#0" expanded="false" />
+            <element signature="e#972#973#0" expanded="false" />
+            <element signature="e#1008#1009#0" expanded="false" />
+            <element signature="e#1064#1065#0" expanded="false" />
+            <element signature="e#1091#1092#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1413,10 +1330,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphics/Animation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/singleton/PlayerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/singleton/FishEnemyManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/fish/player/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+        <state relative-caret-position="204">
+          <caret line="147" column="32" selection-start-line="147" selection-start-column="32" selection-end-line="147" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/GameWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="122" column="9" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
           <folding />
         </state>
       </provider>
