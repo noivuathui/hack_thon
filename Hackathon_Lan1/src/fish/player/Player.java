@@ -52,6 +52,7 @@ public class Player extends FishPlayerObject {
     }
 
     private int count = 0;
+
     public void draw(Graphics g) {
         if(checkEat == false) {
             animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()
@@ -65,6 +66,10 @@ public class Player extends FishPlayerObject {
                 count = 0;
                 checkEat = false;
             }
+        }
+        if(checkCollisionEnemy()){
+            diem += 5;
+            g.drawString("diem cua ban la : "+diem,300,50);
         }
     }
 
@@ -81,14 +86,17 @@ public class Player extends FishPlayerObject {
         }
     }
 
+    public int diem = 0;
     public void update() {
         super.update();
         this.move(this.positionX, this.positionY);
         if(checkCollisionEnemy()) {
             checkEat = true;
+            //diem +=5;
             Music.music("sound2");
         }
-        oldX = positionX;   oldY = positionY;
+        oldX = positionX;
+        oldY = positionY;
     }
 
     private boolean checkCollisionEnemy() {

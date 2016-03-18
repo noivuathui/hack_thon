@@ -3,7 +3,9 @@ package fish.enemy;
 import fish.define.Define;
 import fish.object.FishEnemyObject;
 import graphics.Animation;
+import singleton.FishEnemyManager;
 import singleton.GameManager;
+import singleton.PlayerManager;
 
 import java.awt.*;
 
@@ -79,8 +81,22 @@ public class FishEnemy extends FishEnemyObject {
         }
     }
 
+    public boolean checkCollision() {
+        Rectangle rectEnemy = new Rectangle(positionX, positionY, sprite.getWidth(), sprite.getHeight());
+
+        Rectangle rectPlay =
+                new Rectangle(PlayerManager.getInstance().getPlayer().getPositionX()
+                        , PlayerManager.getInstance().getPlayer().getPositionY()
+                        , PlayerManager.getInstance().getPlayer().getWidth()
+                        , PlayerManager.getInstance().getPlayer().getHeight());
+        return rectEnemy.intersects(rectPlay);
+    }
+
     public void update(){
         this.move();
+//        if(checkCollision()){
+//            PlayerManager.getInstance().getPlayer();
+//        }
     }
     @Override
     public int getWidth() {
