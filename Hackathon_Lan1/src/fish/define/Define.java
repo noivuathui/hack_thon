@@ -1,4 +1,4 @@
-package fish;
+package fish.define;
 
 /**
  * Created by VinhNguyenDinh on 03/16/2016.

@@ -1,9 +1,7 @@
-package fish;
+package fish.object;
 
 import graphics.Animation;
 import main.GameObject;
-import singleton.FishEnemyManager;
-import singleton.PlayerManager;
 
 import java.awt.*;
 
@@ -15,8 +13,9 @@ public abstract class FishObject extends GameObject {
     protected Animation animationNormal;
     protected Animation animationFlip;
     protected Animation animationEat;
-    protected boolean checkEat = false;
-    protected boolean checkFlip = false;
+    protected static boolean checkEat = false;
+    protected static boolean checkFlip = false;
+    protected int delta;
 
     FishObject(int positionX, int positionY, int speed) {
         this.positionX = positionX;
@@ -31,9 +30,7 @@ public abstract class FishObject extends GameObject {
     }
 
     @Override
-    public void draw(Graphics g) {
-        g.drawImage(sprite,positionX,positionY,null);
-    }
+    public abstract void draw(Graphics g);
 
     public abstract int getWidth();
 
@@ -44,4 +41,20 @@ public abstract class FishObject extends GameObject {
     public abstract Animation getAnimationFlip();
 
     public abstract Animation getAnimationEat();
+
+    public static boolean getCheckEat() {
+        return checkEat;
+    }
+
+    public static void setCheckFlip(boolean checkFlip) {
+        FishObject.checkFlip = checkFlip;
+    }
+
+    public static void setCheckEat(boolean checkEat) {
+        FishObject.checkEat = checkEat;
+    }
+
+    public static boolean getCheckFlip() {
+        return checkFlip;
+    }
 }

@@ -1,28 +1,26 @@
-package fish;
+package fish.enemy;
 
+import fish.define.Define;
+import fish.object.FishEnemyObject;
 import graphics.Animation;
 import singleton.GameManager;
 
 import java.awt.*;
 
 /**
- * Created by Anh on 3/14/2016.
+ * Created by noivu on 3/15/2016.
  */
-public class FishEnemy extends FishObject {
-    private int direction; // 1.Left - 2.Right
-    private int delta;
+public class FishEnemySmall extends FishEnemyObject {
     private boolean check = true;
 
-
-    public FishEnemy(int positionX, int positionY, int speed) {
+    public FishEnemySmall(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
         initAnimation();
     }
 
     private void initAnimation(){
-        delta = 50;
-        animationNormal = new Animation(Define.FISH_ENEMY_START,Define.FISH_ENEMY_END,delta);
-        animationFlip = new Animation(Define.FISH_ENEMY_FLIP_START,Define.FISH_ENEMY_FLIP_END,delta);
+        animationNormal = new Animation(Define.FISH_ENEMY_SMALL_START,Define.FISH_ENEMY_SMALL_END,50);
+        animationFlip = new Animation(Define.FISH_ENEMY_SMALL_FLIP_START,Define.FISH_ENEMY_SMALL_FLIP_END,50);
     }
 
     private int count = 0;
@@ -51,16 +49,16 @@ public class FishEnemy extends FishObject {
         yVelocity =  ( int )  ( speed * Math . sin ( direction ));
         if(xVelocity > 0){
             animationNormal.setFlipX(-1);
-            check = false;
         } else {
             animationNormal.setFlipX(1);
         }
     }
+
     public void move() {
-        positionX += xVelocity ;
-        positionY += yVelocity ;  //added
+        positionX += xVelocity;
+        positionY += yVelocity;
         if  ( positionX >= Define.RIGHT_WALL )  {
-              positionX = Define.RIGHT_WALL ;
+            positionX = Define.RIGHT_WALL ;
             setRandomDirection ();
         }
         if  ( positionX <= Define.LEFT_WALL )  {
@@ -75,17 +73,16 @@ public class FishEnemy extends FishObject {
             positionY = Define.UP_WALL ;
             setRandomDirection ();
         }
-    }
+        }
 
     public void update(){
         this.move();
     }
-    @Override
+
     public int getWidth() {
         return animationNormal.getWidth();
     }
 
-    @Override
     public int getHeight() {
         return animationNormal.getHeight();
     }
@@ -104,5 +101,4 @@ public class FishEnemy extends FishObject {
     public Animation getAnimationEat() {
         return null;
     }
-
 }

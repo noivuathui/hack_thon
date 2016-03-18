@@ -1,7 +1,8 @@
-package fish;
+package fish.enemy;
 
+import fish.define.Define;
+import fish.object.FishEnemyObject;
 import graphics.Animation;
-import main.GameObject;
 import singleton.GameManager;
 
 import java.awt.*;
@@ -9,7 +10,7 @@ import java.awt.*;
 /**
  * Created by noivu on 3/15/2016.
  */
-public class JellyFish extends FishObject {
+public class JellyFish extends FishEnemyObject {
     public JellyFish(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
         initAnimation();

@@ -1,5 +1,7 @@
-package fish;
+package fish.enemy;
 
+import fish.define.Define;
+import fish.object.FishEnemyObject;
 import graphics.Animation;
 import singleton.GameManager;
 
@@ -8,7 +10,7 @@ import java.awt.*;
 /**
  * Created by TrungSon on 16/03/2016.
  */
-public class FlashlightFish extends FishObject  {
+public class FlashlightFish extends FishEnemyObject {
     public FlashlightFish(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
         initAnimation();

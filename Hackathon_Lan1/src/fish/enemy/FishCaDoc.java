@@ -1,5 +1,7 @@
-package fish;
+package fish.enemy;
 
+import fish.define.Define;
+import fish.object.FishEnemyObject;
 import graphics.Animation;
 import singleton.GameManager;
 
@@ -8,7 +10,7 @@ import java.awt.*;
 /**
  * Created by noivu on 3/15/2016.
  */
-public class FishCaDoc extends FishObject {
+public class FishCaDoc extends FishEnemyObject {
     private boolean check = true;
 
     public FishCaDoc(int positionX, int positionY, int speed) {
