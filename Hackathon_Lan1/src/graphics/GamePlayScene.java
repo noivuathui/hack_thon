@@ -1,6 +1,7 @@
 package graphics;
 
 import Plant.Coral;
+import Plant.LuoiCau;
 import fish.enemy.FishEnemy;
 import fish.enemy.FishEnemySmall;
 import fish.enemy.FlashlightFish;
@@ -25,6 +26,8 @@ public class GamePlayScene extends Scene {
     BufferedImage background;
     Vector<FishObject> vectorFishObject;
     Vector<Coral> coralVector;
+    LuoiCau luoiCau;
+
     public GamePlayScene() {
         try {
             background = ImageIO.read(new File(Topic.BACKGROUND));
@@ -36,6 +39,7 @@ public class GamePlayScene extends Scene {
     private void initFish() {
         vectorFishObject =  FishEnemyManager.getInstance().getVectorFishObject();
         coralVector = FishEnemyManager.getInstance().getVectorCoral();
+        luoiCau = new LuoiCau(350,450);
 
         vectorFishObject.add(new FishEnemy(350,300,2));
 //        vectorFishObject.add(new FishEnemy(400,200,2));
@@ -61,12 +65,14 @@ public class GamePlayScene extends Scene {
         coralVector.add(new Coral(730,580,2));
         coralVector.add(new Coral(300,20,3));
         coralVector.add(new Coral(450,20,4));
+
     }
 
     @Override
     public void draw(Graphics g) {
-        g.drawString("THIS IS GAME PLAY SCENE. Press B to Menu.Press N to Score.", 300, 300);
         g.drawImage(background, 0, 0, null);
+
+        luoiCau.draw(g);
         for(FishObject fishObject : vectorFishObject) {
             fishObject.draw(g);
         }
@@ -79,6 +85,7 @@ public class GamePlayScene extends Scene {
     @Override
     public void update() {
         PlayerManager.getInstance().getPlayer().update();
+        luoiCau.update();
         for(FishObject fishObject : vectorFishObject) {
             fishObject.update();
         }

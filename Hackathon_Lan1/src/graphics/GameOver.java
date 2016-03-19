@@ -19,7 +19,7 @@ public class GameOver extends Scene {
     public GameOver()  {
         GameManager.getInstance().stackMenuGame.push(new GamePlayScene());
         try {
-            image = ImageIO.read(new File("Resources/image 1.png"));
+            image = ImageIO.read(new File("Resources/gameover1.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -27,7 +27,7 @@ public class GameOver extends Scene {
 
     @Override
     public void draw(Graphics g) {
-        g.drawImage(image, 300, 400, null);
+        g.drawImage(image, 0, 0, null);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class GameOver extends Scene {
             GameManager.getInstance().stackMenuGame.pop();
         }
         if(e.getKeyCode() == KeyEvent.VK_N) {
-            GameManager.getInstance().stackMenuGame.push(new MenuScene());
+            GameManager.getInstance().stackMenuGame.push(new GamePlayScene());
         }
     }
 

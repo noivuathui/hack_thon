@@ -16,7 +16,7 @@ public class MenuScene extends Scene {
     BufferedImage backgroundMenu;
     public MenuScene() {
         try {
-            backgroundMenu = ImageIO.read(new File("Resources/backgroundMenu.png"));
+            backgroundMenu = ImageIO.read(new File("Resources/backmenu1.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
