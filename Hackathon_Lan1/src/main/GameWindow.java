@@ -6,6 +6,7 @@ import fish.enemy.FishEnemySmall;
 import fish.enemy.FlashlightFish;
 import fish.enemy.JellyFish;
 import fish.object.FishObject;
+import graphics.MenuScene;
 import graphics.Topic;
 import singleton.FishEnemyManager;
 import singleton.GameManager;
@@ -24,11 +25,12 @@ import java.util.Vector;
 public class GameWindow extends Frame implements Runnable {
     Graphics seconds;
     Image image;
-    BufferedImage background;
-    Vector<FishObject>  vectorFishObject;
-    Vector<Coral> coralVector;
+//    BufferedImage background;
+//    Vector<FishObject>  vectorFishObject;
+//    Vector<Coral> coralVector;
 
     public GameWindow() {
+        GameManager.getInstance().stackMenuGame.push(new MenuScene());
         this.setTitle(Topic.TITLE);
         this.setSize(1000, 700);
         this.setVisible(true);
@@ -41,14 +43,29 @@ public class GameWindow extends Frame implements Runnable {
                 System.exit(0);
             }
         });
-        try {
-            background = ImageIO.read(new File(Topic.BACKGROUND));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            background = ImageIO.read(new File(Topic.BACKGROUND));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         // Khoi tao
-        initFish();
+//        initFish();
+        this.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
 
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                GameManager.getInstance().stackMenuGame.peek().keyPressed(e);
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
         this.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
@@ -67,31 +84,31 @@ public class GameWindow extends Frame implements Runnable {
 
     }
 
-    private void initFish() {
-        vectorFishObject =  FishEnemyManager.getInstance().getVectorFishObject();
-        coralVector = FishEnemyManager.getInstance().getVectorCoral();
-
-        vectorFishObject.add(new FishEnemy(350,300,2));
-        vectorFishObject.add(new FishEnemy(400,200,2));
-        vectorFishObject.add(new FishEnemy(550,100,2));
-        vectorFishObject.add(new FishEnemy(350,400,2));
-
-        vectorFishObject.add(new FishEnemySmall(200,50,3));
-        vectorFishObject.add(new FishEnemySmall(120,80,2));
-        vectorFishObject.add(new FishEnemySmall(50,50,3));
-        vectorFishObject.add(new FishEnemySmall(70,80,2));
-
-        vectorFishObject.add(new FlashlightFish(50,50,4));
-        vectorFishObject.add(new FlashlightFish(90,200,2));
-
-        vectorFishObject.add(new JellyFish(30,600,2));
-        vectorFishObject.add(new JellyFish(500,600,1));
-
-        coralVector.add(new Coral(80,580,1));
-        coralVector.add(new Coral(730,580,2));
-        coralVector.add(new Coral(300,20,3));
-        coralVector.add(new Coral(450,20,4));
-    }
+//    private void initFish() {
+//        vectorFishObject =  FishEnemyManager.getInstance().getVectorFishObject();
+//        coralVector = FishEnemyManager.getInstance().getVectorCoral();
+//
+//        vectorFishObject.add(new FishEnemy(350,300,2));
+//        vectorFishObject.add(new FishEnemy(400,200,2));
+//        vectorFishObject.add(new FishEnemy(550,100,2));
+//        vectorFishObject.add(new FishEnemy(350,400,2));
+//
+//        vectorFishObject.add(new FishEnemySmall(200,50,3));
+//        vectorFishObject.add(new FishEnemySmall(120,80,2));
+//        vectorFishObject.add(new FishEnemySmall(50,50,3));
+//        vectorFishObject.add(new FishEnemySmall(70,80,2));
+//
+//        vectorFishObject.add(new FlashlightFish(50,50,4));
+//        vectorFishObject.add(new FlashlightFish(90,200,2));
+//
+//        vectorFishObject.add(new JellyFish(30,600,2));
+//        vectorFishObject.add(new JellyFish(500,600,1));
+//
+//        coralVector.add(new Coral(80,580,1));
+//        coralVector.add(new Coral(730,580,2));
+//        coralVector.add(new Coral(300,20,3));
+//        coralVector.add(new Coral(450,20,4));
+//    }
 
     @Override
     public void update(Graphics g){
@@ -106,25 +123,31 @@ public class GameWindow extends Frame implements Runnable {
         g.drawImage(image,0,0,null);
     }
 
+//    @Override
+//    public void paint(Graphics g) {
+//        g.drawImage(background,0,0,null);
+//        for(FishObject fishObject : vectorFishObject) {
+//            fishObject.draw(g);
+//        }
+//        for(Coral coral : coralVector){
+//            coral.draw(g);
+//        }
+//        PlayerManager.getInstance().getPlayer().draw(g);
+//    }
+
     @Override
     public void paint(Graphics g) {
-        g.drawImage(background,0,0,null);
-        for(FishObject fishObject : vectorFishObject) {
-            fishObject.draw(g);
-        }
-        for(Coral coral : coralVector){
-            coral.draw(g);
-        }
-        PlayerManager.getInstance().getPlayer().draw(g);
+        //super.paint(g);
+        GameManager.getInstance().stackMenuGame.peek().draw(g);
     }
-
     @Override
     public void run() {
         while(true) {
-            PlayerManager.getInstance().getPlayer().update();
-            for(FishObject fishObject : vectorFishObject) {
-                fishObject.update();
-            }
+//            PlayerManager.getInstance().getPlayer().update();
+//            for(FishObject fishObject : vectorFishObject) {
+//                fishObject.update();
+//            }
+            GameManager.getInstance().stackMenuGame.peek().update();
             repaint();
             try {
                 Thread.sleep(17);

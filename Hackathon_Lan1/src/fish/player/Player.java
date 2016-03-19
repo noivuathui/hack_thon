@@ -21,6 +21,7 @@ import java.io.IOException;
  */
 public class Player extends FishPlayerObject {
     protected static boolean Lose = false;
+    protected static boolean Dark = false;
     private int dir; //1 quay tra 2 quay phai
 
 
@@ -72,9 +73,10 @@ public class Player extends FishPlayerObject {
         return false;
     }
 
+    long timeOld = System.currentTimeMillis();
     private int count = 0;
     public void draw(Graphics g) {
-        if(checkEat == false && checkFlip == false&&Lose == false) {
+        if(checkFlip == false&&Lose == false&&Dark == false) {
             animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()+animationNormal.getWidth()/2
                     , positionY + GameManager.getInstance().getLocationY());
         }
@@ -87,29 +89,65 @@ public class Player extends FishPlayerObject {
                 count = 0;
                 checkEat = false;
                 checkFlip = false;
+                Lose=false;
             }
         }
         else if(checkFlip ==true){
-            animationFlip.draw(g,positionX + GameManager.getInstance().getLocationX(),
+            animationFlip.draw(g,positionX + GameManager.getInstance().getLocationX()+animationFlip.getWidth()/2,
                     positionY + GameManager.getInstance().getLocationY());
             count++;
             if(count > 17){
                 count = 0;
                 checkFlip =false;
                 checkEat = false;
+                Lose = false;
+                Dark = false;
             }
         }
-        else  if(Lose == true){
+//        else  if(Lose == true){
+//
+//            for(int dm =0 ; dm <10; dm++){
+//
+//                BufferedImage image = null;
+//                try {
+//                    image = ImageIO.read(new File("Resources/gameover.png"));
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                g.drawImage(image, 300, 300, null);
+//                this.positionX = -1000;
+//                this.positionY = -1000;
+//
+//                Lose =false;
+//                checkFlip = false;
+//                checkEat = false;
+//            }
+//        }
+        else if(Dark == true){
 
-            BufferedImage image = null;
-            try {
-                image = ImageIO.read(new File("Resources/gameover.png"));
-            } catch (IOException e) {
-                e.printStackTrace();
+
+
+            long startTime = System.currentTimeMillis();
+            while(System.currentTimeMillis() - startTime <= 30){
+                BufferedImage image = null;
+
+                try{
+                    image = ImageIO.read(new File("Resources/dark.jpg"));
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+                g.drawImage(image,0,0,null);
+                animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()+animationNormal.getWidth()/2
+                        , positionY + GameManager.getInstance().getLocationY());
+
             }
-            g.drawImage(image, 300, 300,null);
-                this.positionX =-1000;
-                this.positionY =-1000;
+
+
+
+            checkFlip =false;
+            checkEat = false;
+            Lose =false;
+
 
 
         }
@@ -122,12 +160,14 @@ public class Player extends FishPlayerObject {
     public void move(int positionX, int positionY) {
         this.positionX = positionX;
         this.positionY = positionY;
-        if(positionX > oldX + 10) {
+        if(positionX > oldX + 3) {
             animationNormal.setFlipX(-1);
+            animationFlip.setFlipX(1);
             this.dir = 1;
         }
-        else if(positionX < oldX - 10){
+        else if(positionX < oldX - 3){
             animationNormal.setFlipX(1);
+            animationFlip.setFlipX(-1);
             this.dir = 2;
         }
 
@@ -137,6 +177,7 @@ public class Player extends FishPlayerObject {
     public int eat = 0;
     public void update() {
         super.update();
+
         this.move(this.positionX, this.positionY);
         if (checkCollisionEnemy()) {
             eat++;
@@ -144,6 +185,7 @@ public class Player extends FishPlayerObject {
                 eat = 0;
                 level++;
             }
+
             if (s1 > s2) {
                 checkEat = true;
 
@@ -152,7 +194,13 @@ public class Player extends FishPlayerObject {
             }else {
                 Lose =true;
             }
+
+
         }
+        checkJellyFish();
+//        if(checkJellyFish()){
+//            Dark = true;
+//        }
             if (checkFlip()) {
                 checkFlip = true;
             }
@@ -170,7 +218,7 @@ public class Player extends FishPlayerObject {
         Rectangle rectPlayer = new Rectangle(this.positionX, this.positionY, animationNormal.getWidth(), animationNormal.getHeight());
         s1 = animationNormal.getWidth() * animationNormal.getHeight();
         for (FishObject fishObject : FishEnemyManager.getInstance().getVectorFishObject()) {
-            Rectangle rectFishObject = new Rectangle(fishObject.getPositionX(), fishObject.getPositionY(), fishObject.getWidth(), fishObject.getHeight());
+            Rectangle rectFishObject = new Rectangle(fishObject.getPositionX(), fishObject.getPositionY(), fishObject.getWidth()/5, fishObject.getHeight()/5);
             s2 = fishObject.getWidth() * fishObject.getHeight();
             if(rectPlayer.intersects(rectFishObject)&& !(fishObject instanceof JellyFish)) {
                 if (s1 >= s2 ) {
@@ -180,14 +228,33 @@ public class Player extends FishPlayerObject {
                 }
                 else {
 
-                   // System.out.println("cham duoc roi");
+//                    System.out.println("cham duoc roi");
 
                     return true;
                 }
             }
+
         }
         return false;
     }
+    private boolean checkJellyFish(){
+        Rectangle rectPlayer = new Rectangle(this.positionX, this.positionY, animationNormal.getWidth(), animationNormal.getHeight());
+
+        for (FishObject fishObject : FishEnemyManager.getInstance().getVectorFishObject()) {
+            Rectangle rectFishObject = new Rectangle(fishObject.getPositionX(), fishObject.getPositionY(), fishObject.getWidth()/4, fishObject.getHeight()/4);
+
+
+            if(rectPlayer.intersects(rectFishObject)&& (fishObject instanceof JellyFish)){
+                Dark = true;
+//                System.out.println(" cc nhe");
+                return true;
+
+            }
+        }
+        return false;
+    }
+
+
 
     @Override
     public int getWidth() {
