@@ -25,7 +25,6 @@ public class Player extends FishPlayerObject {
     protected static boolean Dark = false;
     private int dir; //1 quay tra 2 quay phai
 
-
     private void initAnimation() {
         if(level == 1) {
             start = Define.FISH_LEVEL1_START; end = Define.FISH_LEVEL1_END;
@@ -57,20 +56,16 @@ public class Player extends FishPlayerObject {
     public Player(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
         this.dir = 2;
-        this.level = 2;
+        this.level = 1;
         this.health = 100;
         checkFlip = false;
         initAnimation();
     }
 
-
     private boolean checkFlip(){
-
-            if(this.dir != this.oldDir){
-
-                return true;
-            }
-
+        if(this.dir != this.oldDir){
+            return true;
+        }
         return false;
     }
 
@@ -105,41 +100,35 @@ public class Player extends FishPlayerObject {
                 Dark = false;
             }
         }
-
         else if(Dark == true){
-
             long startTime = System.currentTimeMillis();
             while(System.currentTimeMillis() - startTime <= 30){
                 BufferedImage image = null;
-                BufferedImage backgroundMenu = null;
                 try{
                     image = ImageIO.read(new File("Resources/dark.png"));
                 }catch(Exception e){
                     e.printStackTrace();
                 }
-                try {
-                    backgroundMenu = ImageIO.read(new File(Topic.BACKGROUND));
-                } catch (IOException e) {
-                    e.printStackTrace();
+                if(this.dir ==2){
+                    g.drawImage(image,positionX-850,positionY-650,null);
+                    animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()+animationNormal.getWidth()/2
+                            , positionY + GameManager.getInstance().getLocationY());
                 }
-                g.drawImage(backgroundMenu,0,0,null);
-                g.drawImage(image,positionX-1000,positionY-700,null);
+                else if(this.dir ==1){
+                    g.drawImage(image,positionX - 950,positionY-650,null);
+                    animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()+animationNormal.getWidth()/2
+                            , positionY + GameManager.getInstance().getLocationY());
+                }
+//                g.drawImage(image,positionX-1000,positionY-700,null);
 //                g.drawImage(backgroundMenu,0,0,null);
-                animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()+animationNormal.getWidth()/2
-                        , positionY + GameManager.getInstance().getLocationY());
+//                animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()+animationNormal.getWidth()/2
+//                        , positionY + GameManager.getInstance().getLocationY());
 
             }
-
-
-
             checkFlip =false;
             checkEat = false;
             Lose =false;
-
-
-
         }
-
     }
 
     private int oldX;
@@ -165,24 +154,21 @@ public class Player extends FishPlayerObject {
     public int eat = 0;
     public void update() {
         super.update();
-
         this.move(this.positionX, this.positionY);
         if (checkCollisionEnemy()) {
             eat++;
-            if (eat <= 4) {
+            if (eat >= 4) {
                 eat = 0;
                 level++;
-            }
+                initAnimation();
 
+            }
             if (s1 > s2) {
                 checkEat = true;
-
                 Music.music("sound2");
-
-            }else {
+            } else {
                 Lose =true;
             }
-
 
         }
         checkJellyFish();
@@ -200,11 +186,9 @@ public class Player extends FishPlayerObject {
     }
 
     public double s1, s2;
-
     private boolean checkCollisionEnemy() {
-
         Rectangle rectPlayer = new Rectangle(this.positionX, this.positionY, animationNormal.getWidth(), animationNormal.getHeight());
-        s1 = animationNormal.getWidth() * animationNormal.getHeight();
+        s1 = animationNormal.getWidth()* animationNormal.getHeight();
         for (FishObject fishObject : FishEnemyManager.getInstance().getVectorFishObject()) {
             Rectangle rectFishObject = new Rectangle(fishObject.getPositionX(), fishObject.getPositionY(), fishObject.getWidth()/5, fishObject.getHeight()/5);
             s2 = fishObject.getWidth() * fishObject.getHeight();
@@ -215,9 +199,7 @@ public class Player extends FishPlayerObject {
                     return true;
                 }
                 else {
-
 //                    System.out.println("cham duoc roi");
-
                     return true;
                 }
             }
@@ -230,8 +212,6 @@ public class Player extends FishPlayerObject {
 
         for (FishObject fishObject : FishEnemyManager.getInstance().getVectorFishObject()) {
             Rectangle rectFishObject = new Rectangle(fishObject.getPositionX(), fishObject.getPositionY(), fishObject.getWidth()/4, fishObject.getHeight()/4);
-
-
             if(rectPlayer.intersects(rectFishObject)&& (fishObject instanceof JellyFish)){
                 Dark = true;
 //                System.out.println(" cc nhe");
@@ -241,8 +221,6 @@ public class Player extends FishPlayerObject {
         }
         return false;
     }
-
-
 
     @Override
     public int getWidth() {

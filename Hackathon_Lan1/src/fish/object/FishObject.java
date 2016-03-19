@@ -16,13 +16,11 @@ public abstract class FishObject extends GameObject {
     protected int level;
     protected int delta;
 
-
     FishObject(int positionX, int positionY, int speed) {
         this.positionX = positionX;
         this.positionY = positionY;
         this.speed = speed;
     }
-
 
     @Override
     public void update() {
@@ -42,4 +40,11 @@ public abstract class FishObject extends GameObject {
 
     public abstract Animation getAnimationEat();
 
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 }

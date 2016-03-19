@@ -54,37 +54,6 @@ public abstract class FishEnemyObject extends FishObject {
 
     public void update(){
         this.move();
-//        if(checkCollision()){
-//           // System.out.println("");
-//        }
-    }
-
-    double s1 = 0;
-    double s2 = 0;
-    private boolean checkCollision() {
-
-        //Rectangle rectPlayer = new Rectangle(this.positionX, this.positionY, animationNormal.getWidth(), animationNormal.getHeight());
-        //s1 = animationNormal.getWidth() * animationNormal.getHeight();
-        for (FishObject fishObject : FishEnemyManager.getInstance().getVectorFishObject()) {
-            Rectangle rectFishObject = new Rectangle(fishObject.getPositionX(), fishObject.getPositionY(), fishObject.getWidth(), fishObject.getHeight());
-            for (FishObject fishEnemyObject : FishEnemyManager.getInstance().getVectorFishObject()) {
-                Rectangle rectFishEnemyObject = new Rectangle(fishEnemyObject.getPositionX(), fishEnemyObject.getPositionY(), fishEnemyObject.getWidth(), fishEnemyObject.getHeight());
-                s1 = fishObject.getWidth() * fishObject.getHeight();
-                s2 = fishEnemyObject.getWidth() * fishEnemyObject.getHeight();
-                if (rectFishObject.intersects(rectFishEnemyObject) ||rectFishEnemyObject.intersects(rectFishObject) && !(fishObject instanceof JellyFish)) {
-                    if (s1 >= s2) {
-                        System.out.println("ok an roi");
-                        FishEnemyManager.getInstance().getVectorFishObject().remove(FishEnemyManager.getInstance().getVectorFishObject().indexOf(fishObject));
-                        FishEnemyManager.getInstance().getVectorFishObject().remove(FishEnemyManager.getInstance().getVectorFishObject().indexOf(fishEnemyObject));
-                        return false;
-                    } else {
-                        FishEnemyManager.getInstance().getVectorFishObject().remove(FishEnemyManager.getInstance().getVectorFishObject().indexOf(fishObject));
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
     }
 
     private int count = 0;

@@ -42,6 +42,9 @@ public class GameOver extends Scene {
 
     @Override
     public void keyPressed(KeyEvent e) {
+        while(GameManager.getInstance().stackMenuGame != null) {
+            GameManager.getInstance().stackMenuGame.pop();
+        }
         if(e.getKeyCode() == KeyEvent.VK_N) {
             GameManager.getInstance().stackMenuGame.push(new MenuScene());
         }

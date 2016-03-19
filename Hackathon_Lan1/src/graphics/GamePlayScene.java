@@ -43,12 +43,16 @@ public class GamePlayScene extends Scene {
 //        vectorFishObject.add(new FishEnemy(350,400,2));
 
         vectorFishObject.add(new FishEnemySmall(200,50,3));
-        vectorFishObject.add(new FishEnemySmall(120,80,2));
+        vectorFishObject.add(new FishEnemySmall(320,80,2));
         vectorFishObject.add(new FishEnemySmall(50,50,3));
-        vectorFishObject.add(new FishEnemySmall(70,80,2));
+        vectorFishObject.add(new FishEnemySmall(170,80,2));
+        vectorFishObject.add(new FishEnemySmall(220,50,3));
+        vectorFishObject.add(new FishEnemySmall(120,100,2));
+//        vectorFishObject.add(new FishEnemySmall(50,70,3));
+//        vectorFishObject.add(new FishEnemySmall(90,100,2));
 
         vectorFishObject.add(new FlashlightFish(50,50,4));
-//        vectorFishObject.add(new FlashlightFish(90,200,2));
+        vectorFishObject.add(new FlashlightFish(90,200,2));
 
         vectorFishObject.add(new JellyFish(30,600,2));
         vectorFishObject.add(new JellyFish(500,600,1));
