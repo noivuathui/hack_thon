@@ -13,7 +13,9 @@ public abstract class FishObject extends GameObject {
     protected Animation animationNormal;
     protected Animation animationFlip;
     protected Animation animationEat;
+
     protected int delta;
+
 
     FishObject(int positionX, int positionY, int speed) {
         this.positionX = positionX;

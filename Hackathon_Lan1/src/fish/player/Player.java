@@ -6,6 +6,7 @@ import fish.enemy.JellyFish;
 import fish.object.FishObject;
 import fish.object.FishPlayerObject;
 import graphics.Animation;
+import graphics.Topic;
 import singleton.FishEnemyManager;
 import singleton.GameManager;
 import sound.Music;
@@ -130,13 +131,20 @@ public class Player extends FishPlayerObject {
             long startTime = System.currentTimeMillis();
             while(System.currentTimeMillis() - startTime <= 30){
                 BufferedImage image = null;
-
+                BufferedImage backgroundMenu = null;
                 try{
-                    image = ImageIO.read(new File("Resources/dark.jpg"));
+                    image = ImageIO.read(new File("Resources/dark.png"));
                 }catch(Exception e){
                     e.printStackTrace();
                 }
-                g.drawImage(image,0,0,null);
+                try {
+                    backgroundMenu = ImageIO.read(new File(Topic.BACKGROUND));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                g.drawImage(backgroundMenu,0,0,null);
+                g.drawImage(image,positionX-1000,positionY-700,null);
+//                g.drawImage(backgroundMenu,0,0,null);
                 animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()+animationNormal.getWidth()/2
                         , positionY + GameManager.getInstance().getLocationY());
 
