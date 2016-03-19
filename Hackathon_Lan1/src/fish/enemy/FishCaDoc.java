@@ -16,6 +16,7 @@ public class FishCaDoc extends FishEnemyObject {
     public FishCaDoc(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
         initAnimation();
+        this.level = 2;
     }
 
     private void initAnimation(){

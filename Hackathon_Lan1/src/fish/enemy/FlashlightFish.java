@@ -21,6 +21,7 @@ public class FlashlightFish extends FishEnemyObject {
         animationNormal.setFlipX(-1);
         animationFlip = new Animation(Define.FLASH_LIGHT_FISH_FLIP_START, Define.FLASH_LIGHT_FISH_FLIP_END, 50);
         animationEat = new Animation(Define.FLASH_LIGHT_FISH_EAT_START, Define.FLASH_LIGHT_FISH_EAT_END, 50);
+        this.level = 3;
     }
 
     public int getWidth() {

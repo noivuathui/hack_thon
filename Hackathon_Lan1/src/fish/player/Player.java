@@ -105,28 +105,8 @@ public class Player extends FishPlayerObject {
                 Dark = false;
             }
         }
-//        else  if(Lose == true){
-//
-//            for(int dm =0 ; dm <10; dm++){
-//
-//                BufferedImage image = null;
-//                try {
-//                    image = ImageIO.read(new File("Resources/gameover.png"));
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//                g.drawImage(image, 300, 300, null);
-//                this.positionX = -1000;
-//                this.positionY = -1000;
-//
-//                Lose =false;
-//                checkFlip = false;
-//                checkEat = false;
-//            }
-//        }
+
         else if(Dark == true){
-
-
 
             long startTime = System.currentTimeMillis();
             while(System.currentTimeMillis() - startTime <= 30){

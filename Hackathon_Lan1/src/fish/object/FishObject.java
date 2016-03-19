@@ -13,7 +13,7 @@ public abstract class FishObject extends GameObject {
     protected Animation animationNormal;
     protected Animation animationFlip;
     protected Animation animationEat;
-
+    protected int level;
     protected int delta;
 
 

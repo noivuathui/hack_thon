@@ -22,6 +22,7 @@ public class FishEnemySmall extends FishEnemyObject {
         animationNormal = new Animation(Define.FISH_ENEMY_SMALL_START,Define.FISH_ENEMY_SMALL_END,50);
         animationNormal.setFlipX(-1);
         animationFlip = new Animation(Define.FISH_ENEMY_SMALL_FLIP_START,Define.FISH_ENEMY_SMALL_FLIP_END,50);
+        this.level = 1;
     }
 
     public int getWidth() {
