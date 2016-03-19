@@ -143,10 +143,6 @@ public class GameWindow extends Frame implements Runnable {
     @Override
     public void run() {
         while(true) {
-//            PlayerManager.getInstance().getPlayer().update();
-//            for(FishObject fishObject : vectorFishObject) {
-//                fishObject.update();
-//            }
             GameManager.getInstance().stackMenuGame.peek().update();
             repaint();
             try {

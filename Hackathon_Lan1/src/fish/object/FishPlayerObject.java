@@ -6,7 +6,7 @@ import fish.object.FishObject;
  * Created by VinhNguyenDinh on 03/18/2016.
  */
 public abstract class FishPlayerObject extends FishObject {
-    protected int level;
+    //protected int level;
     protected int health;
     protected int start;
     protected int end;

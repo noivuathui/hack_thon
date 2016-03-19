@@ -6,6 +6,7 @@ import fish.enemy.JellyFish;
 import fish.object.FishObject;
 import fish.object.FishPlayerObject;
 import graphics.Animation;
+import graphics.GamePlayScene;
 import graphics.Topic;
 import singleton.FishEnemyManager;
 import singleton.GameManager;
@@ -23,6 +24,10 @@ import java.io.IOException;
 public class Player extends FishPlayerObject {
     protected static boolean Lose = false;
     protected static boolean Dark = false;
+    private int scoreLevel1 = 10;
+    private int scoreLevel2 = 20;
+    private int scoreLevel3 = 30;
+
     private int dir; //1 quay tra 2 quay phai
 
     private void initAnimation() {
@@ -56,7 +61,7 @@ public class Player extends FishPlayerObject {
     public Player(int positionX, int positionY, int speed) {
         super(positionX, positionY, speed);
         this.dir = 2;
-        this.level = 1;
+        this.level = 2;
         this.health = 100;
         checkFlip = false;
         initAnimation();
@@ -119,11 +124,6 @@ public class Player extends FishPlayerObject {
                     animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()+animationNormal.getWidth()/2
                             , positionY + GameManager.getInstance().getLocationY());
                 }
-//                g.drawImage(image,positionX-1000,positionY-700,null);
-//                g.drawImage(backgroundMenu,0,0,null);
-//                animationNormal.draw(g, positionX + GameManager.getInstance().getLocationX()+animationNormal.getWidth()/2
-//                        , positionY + GameManager.getInstance().getLocationY());
-
             }
             checkFlip =false;
             checkEat = false;
@@ -150,19 +150,39 @@ public class Player extends FishPlayerObject {
 
     }
 
-    public int diem = 0;
     public int eat = 0;
     public void update() {
         super.update();
         this.move(this.positionX, this.positionY);
         if (checkCollisionEnemy()) {
             eat++;
-            if (eat >= 4) {
-                eat = 0;
-                level++;
-                initAnimation();
-
+            switch (level) {
+                case 1: {
+                    if(eat > scoreLevel1) {
+                        eat = 0;
+                        level++;
+                        initAnimation();
+                    }
+                    break;
+                }
+                case 2: {
+                    if(eat > scoreLevel2) {
+                        eat = 0;
+                        level++;
+                        initAnimation();
+                    }
+                    break;
+                }
+                case 3: {
+                    if(eat > scoreLevel3) {
+                        eat = 0;
+                        level++;
+                        initAnimation();
+                    }
+                    break;
+                }
             }
+
             if (s1 > s2) {
                 checkEat = true;
                 Music.music("sound2");
@@ -172,17 +192,12 @@ public class Player extends FishPlayerObject {
 
         }
         checkJellyFish();
-//        if(checkJellyFish()){
-//            Dark = true;
-//        }
-            if (checkFlip()) {
-                checkFlip = true;
-            }
-            oldX = positionX;
-            oldY = positionY;
-            oldDir = this.dir;
-
-
+        if (checkFlip()) {
+            checkFlip = true;
+        }
+        oldX = positionX;
+        oldY = positionY;
+        oldDir = this.dir;
     }
 
     public double s1, s2;
@@ -190,20 +205,14 @@ public class Player extends FishPlayerObject {
         Rectangle rectPlayer = new Rectangle(this.positionX, this.positionY, animationNormal.getWidth(), animationNormal.getHeight());
         s1 = animationNormal.getWidth()* animationNormal.getHeight();
         for (FishObject fishObject : FishEnemyManager.getInstance().getVectorFishObject()) {
-            Rectangle rectFishObject = new Rectangle(fishObject.getPositionX(), fishObject.getPositionY(), fishObject.getWidth()/5, fishObject.getHeight()/5);
+            Rectangle rectFishObject = new Rectangle(fishObject.getPositionX(), fishObject.getPositionY(), fishObject.getWidth() / 5, fishObject.getHeight() / 5);
             s2 = fishObject.getWidth() * fishObject.getHeight();
-            if(rectPlayer.intersects(rectFishObject)&& !(fishObject instanceof JellyFish)) {
-                if (s1 >= s2 ) {
-                    //System.out.println("awn roi ne");
+            if (rectPlayer.intersects(rectFishObject) && !(fishObject instanceof JellyFish)) {
+                if (s1 >= s2) {
                     FishEnemyManager.getInstance().getVectorFishObject().remove(FishEnemyManager.getInstance().getVectorFishObject().indexOf(fishObject));
-                    return true;
                 }
-                else {
-//                    System.out.println("cham duoc roi");
-                    return true;
-                }
+                return true;
             }
-
         }
         return false;
     }
